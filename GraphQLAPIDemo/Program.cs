@@ -3,6 +3,10 @@ using GraphQLAPIDemo.Query;
 using Microsoft.EntityFrameworkCore;
 using OpenTelemetry.Trace;
 using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using Microsoft.AspNetCore.Hosting;
+using OpenTelemetry.Instrumentation.AspNetCore;
+using GraphQLAPIDemo.Listener;
 
 var builder = WebApplication.CreateBuilder(args);
 var dbString = builder.Configuration.GetConnectionString("BookDatabase");
@@ -26,18 +30,25 @@ builder.Services.AddOpenTelemetryTracing(
         b.AddAspNetCoreInstrumentation();
         b.AddHotChocolateInstrumentation();
         //b.AddJaegerExporter();
-        b.AddConsoleExporter();
+        b.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("GraphQLAPIDemo"));
+        b.AddOtlpExporter(options => options.Endpoint = new Uri("http://localhost:6831"));
+        b.AddConsoleExporter();        
     });
 
 builder.Logging.AddOpenTelemetry(
     b =>
-    {
+    {     
         b.IncludeFormattedMessage = true;
         b.IncludeScopes = true;
         b.ParseStateValues = true;
+        b.AddMyExporter();
     });
 
 
+builder.Services.Configure<AspNetCoreInstrumentationOptions>(options =>
+{
+    options.RecordException = true;
+});
 
 // Add services to the container.
 
@@ -52,5 +63,6 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapGraphQL();
 });
+
 
 app.Run();
