@@ -1,18 +1,19 @@
 ﻿using OpenTelemetry;
-using OpenTelemetry.Logs;
+using OpenTelemetry.Trace;
+
 
 namespace GraphQLAPIDemo.Listener
 {
     internal static class LoggerExtensions
     {
-        public static OpenTelemetryLoggerOptions AddMyExporter(this OpenTelemetryLoggerOptions options)
+        public static TracerProviderBuilder AddFileExporter(this TracerProviderBuilder builder)
         {
-            if (options == null)
+            if (builder == null)
             {
-                throw new ArgumentNullException(nameof(options));
+                throw new ArgumentNullException(nameof(builder));
             }
 
-            return options.AddProcessor(new BatchLogRecordExportProcessor(new MyExporter()));
+            return builder.AddProcessor(new BatchActivityExportProcessor(new FileActivityExporter()));
         }
     }
 }
