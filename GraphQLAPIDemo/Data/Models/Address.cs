@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
-    [Authorize]
     public partial class Address
     {
         public Address()
@@ -22,7 +21,6 @@ namespace GraphQLAPIDemo.Data.Models
         [Required]
         [StringLength(50)]
         public string City { get; set; }
-        [Authorize]
         [Required]
         [StringLength(50)]        
         public string Street { get; set; }

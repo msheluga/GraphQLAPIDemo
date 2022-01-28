@@ -17,6 +17,8 @@ var dbString = builder.Configuration.GetConnectionString("BookDatabase");
 //.WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day));
 
 builder.Logging.ClearProviders();
+builder.Services.AddLogging();
+builder.Services.AddHealthChecks();
 
 builder.Services.AddPooledDbContextFactory<BooksContext>(opt =>
                 opt.UseSqlServer(dbString));
@@ -40,9 +42,8 @@ builder.Services.AddOpenTelemetryTracing(
         b.AddHttpClientInstrumentation();
         b.AddAspNetCoreInstrumentation();
         b.AddHotChocolateInstrumentation();
-        //b.AddJaegerExporter();
-        b.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("GraphQLAPIDemo"));
-        //b.AddOtlpExporter(options => options.Endpoint = new Uri("http://localhost:6831"));
+        b.AddSource("GraphQLAPIDemo");
+        b.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("GraphQLAPIDemo"));        
         b.AddConsoleExporter();
         b.AddFileExporter();
     }); 
@@ -59,6 +60,7 @@ builder.Logging.AddOpenTelemetry(
 builder.Services.Configure<AspNetCoreInstrumentationOptions>(options =>
 {
     options.RecordException = true;
+    
 });
 
 

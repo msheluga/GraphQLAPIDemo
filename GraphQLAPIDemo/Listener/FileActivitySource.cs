@@ -4,6 +4,6 @@ namespace GraphQLAPIDemo.Listener
 {
     public static class FileActivitySource
     {
-        public static readonly ActivitySource GraphQLDemoActivitySource = new("GraphQLAPIDemo");
+        public static readonly ActivitySource GraphQLDemoActivitySource = new ActivitySource("GraphQLAPIDemo");
     }
 }
