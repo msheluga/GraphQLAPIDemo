@@ -4,7 +4,7 @@ using OpenTelemetry.Trace;
 
 namespace GraphQLAPIDemo.Listener
 {
-    internal static class LoggerExtensions
+    internal static class FileTraceExtensions
     {
         public static TracerProviderBuilder AddFileExporter(this TracerProviderBuilder builder)
         {

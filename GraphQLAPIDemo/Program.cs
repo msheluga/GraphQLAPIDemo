@@ -9,7 +9,7 @@ using OpenTelemetry.Instrumentation.AspNetCore;
 using GraphQLAPIDemo.Listener;
 
 var builder = WebApplication.CreateBuilder(args);
-   
+
 var dbString = builder.Configuration.GetConnectionString("BookDatabase");
 
 //builder.Host.UseSerilog((ctx, lc) => lc
@@ -22,7 +22,7 @@ builder.Services.AddHealthChecks();
 
 builder.Services.AddPooledDbContextFactory<BooksContext>(opt =>
                 opt.UseSqlServer(dbString));
-builder.Services.AddScoped<BooksContext>(sp => 
+builder.Services.AddScoped<BooksContext>(sp =>
     sp.GetRequiredService<IDbContextFactory<BooksContext>>().CreateDbContext());
 builder.Services.AddHealthChecks();
 builder.Services.AddGraphQLServer()
@@ -43,24 +43,43 @@ builder.Services.AddOpenTelemetryTracing(
         b.AddAspNetCoreInstrumentation();
         b.AddHotChocolateInstrumentation();
         b.AddSource("GraphQLAPIDemo");
-        b.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("GraphQLAPIDemo"));        
+        b.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("GraphQLAPIDemo"));
         b.AddConsoleExporter();
         b.AddFileExporter();
-    }); 
+    });
 
 builder.Logging.AddOpenTelemetry(
     b =>
-    {   
+    {
         b.IncludeFormattedMessage = true;
         b.IncludeScopes = true;
-        b.ParseStateValues = true;        
+        b.ParseStateValues = true;
+        b.AddFileExporter();
     });
 
 
 builder.Services.Configure<AspNetCoreInstrumentationOptions>(options =>
 {
     options.RecordException = true;
-    
+    options.Enrich = (activity, eventName, rawObject) =>
+    {
+    if (eventName.Equals("OnStartActivity"))
+    {
+        if (rawObject is HttpRequest httpRequest)
+        {
+            activity.SetTag("requestProtocol", httpRequest.Protocol);
+            activity.SetTag("Auth", httpRequest.Headers["Authorization"]);
+            activity.AddEvent(new(string.Format("Http remote {0}", httpRequest.HttpContext.Connection.RemoteIpAddress)));
+            
+        }
+        else if (eventName.Equals("OnStopActivity"))
+{
+    if (rawObject is HttpResponse httpResponse)
+    {
+        activity.SetTag("responseLength", httpResponse.ContentLength);
+    }
+}
+    };
 });
 
 

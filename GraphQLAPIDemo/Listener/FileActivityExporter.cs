@@ -74,9 +74,8 @@ namespace GraphQLAPIDemo.Listener
                 }
             }
             //adding a line break
-            sb.AppendLine(Environment.NewLine);
-           //Console.WriteLine($"{this.name}.Export([{sb.ToString()}])");
-           var fullFilePath = System.IO.Path.GetDirectoryName(Directory.GetCurrentDirectory()) +  "//" + String.Format("Log_{0}.txt", DateTimeOffset.UtcNow.UtcDateTime.ToString("yyyyMMdd"));
+            sb.AppendLine(Environment.NewLine);           
+           var fullFilePath = System.IO.Path.GetDirectoryName(Directory.GetCurrentDirectory()) +  "//" + String.Format("Log_Activity_{0}.txt", DateTimeOffset.UtcNow.UtcDateTime.ToString("yyyyMMdd"));
             if (File.Exists(fullFilePath))
             {
                 //append to the file
@@ -85,8 +84,7 @@ namespace GraphQLAPIDemo.Listener
             else
             {
                 File.WriteAllTextAsync(fullFilePath, sb.ToString());
-            }
-            //File.WriteAllText(systemPath + "//" +  DateTime.UtcNow.ToFileTimeUtc()+ "Log_.txt", sb.ToString());
+            }           
             return ExportResult.Success;
         }
     
