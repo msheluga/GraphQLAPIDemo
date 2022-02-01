@@ -7,6 +7,7 @@ using OpenTelemetry.Resources;
 using Microsoft.AspNetCore.Hosting;
 using OpenTelemetry.Instrumentation.AspNetCore;
 using GraphQLAPIDemo.Listener;
+using HotChocolate.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,14 +28,16 @@ builder.Services.AddScoped<BooksContext>(sp =>
 builder.Services.AddHealthChecks();
 builder.Services.AddGraphQLServer()
     .AddAuthorization()
-    .AddQueryType<Query>()
+    .AddQueryType<Query>()    
     .AddProjections()
     .AddFiltering()
     .AddSorting()
-    .AddInstrumentation();
-
-
-
+    .AddInstrumentation(
+    o =>
+    {
+        o.Scopes = ActivityScopes.All;
+    })
+    .AddDiagnosticEventListener<MyListener>();
 
 builder.Services.AddOpenTelemetryTracing(
     b =>
@@ -63,22 +66,26 @@ builder.Services.Configure<AspNetCoreInstrumentationOptions>(options =>
     options.RecordException = true;
     options.Enrich = (activity, eventName, rawObject) =>
     {
-    if (eventName.Equals("OnStartActivity"))
-    {
-        if (rawObject is HttpRequest httpRequest)
+        if (eventName.Equals("OnStartActivity"))
         {
-            activity.SetTag("requestProtocol", httpRequest.Protocol);
-            activity.SetTag("Auth", httpRequest.Headers["Authorization"]);
-            activity.AddEvent(new(string.Format("Http remote {0}", httpRequest.HttpContext.Connection.RemoteIpAddress)));
-            
+            if (rawObject is HttpRequest httpRequest)
+            {
+                activity.SetTag("requestProtocol", httpRequest.Protocol);
+                activity.SetTag("remote", httpRequest.HttpContext.Connection.RemoteIpAddress);
+                activity.AddEvent(new(string.Format("Http remote {0}", httpRequest.HttpContext.Connection.RemoteIpAddress)));
+                activity.AddEvent(new(String.Format("Http request {0}", httpRequest.HttpContext.Request.ToString())));
+            }
         }
         else if (eventName.Equals("OnStopActivity"))
-{
-    if (rawObject is HttpResponse httpResponse)
-    {
-        activity.SetTag("responseLength", httpResponse.ContentLength);
-    }
-}
+        {
+            if (rawObject is HttpResponse httpResponse)
+            {
+                activity.SetTag("responseLength", httpResponse.ContentLength);
+                activity.SetTag("response", httpResponse.HttpContext.Response.ToString());
+                activity.AddEvent(new(string.Format("Http response length {0}", httpResponse.ContentLength)));
+                activity.AddEvent(new(String.Format("Http response {0}", httpResponse.HttpContext.Response.ToString())));
+            }
+        }    
     };
 });
 

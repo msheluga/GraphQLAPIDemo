@@ -5,7 +5,7 @@ using System.Diagnostics;
 
 namespace GraphQLAPIDemo.Query
 {
-    public class Query
+    public partial class Query
     {
         public static readonly ActivitySource MyActivitySource = new("GraphQLAPIDemo");
 
