@@ -361,7 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/Log_Record_20220131.txt
-/Log_Record_20220128.txt
-/Log_Activity_20220131.txt
-/Log_Activity_20220128.txt
+*.txt

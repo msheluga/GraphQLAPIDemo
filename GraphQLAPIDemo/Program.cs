@@ -8,14 +8,11 @@ using Microsoft.AspNetCore.Hosting;
 using OpenTelemetry.Instrumentation.AspNetCore;
 using GraphQLAPIDemo.Listener;
 using HotChocolate.Diagnostics;
+using GraphQLAPIDemo.Mutation;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var dbString = builder.Configuration.GetConnectionString("BookDatabase");
-
-//builder.Host.UseSerilog((ctx, lc) => lc
-//    .MinimumLevel.Information()
-//.WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day));
 
 builder.Logging.ClearProviders();
 builder.Services.AddLogging();
@@ -28,7 +25,7 @@ builder.Services.AddScoped<BooksContext>(sp =>
 builder.Services.AddHealthChecks();
 builder.Services.AddGraphQLServer()
     .AddAuthorization()
-    .AddQueryType<Query>()    
+    .AddQueryType<Query>()
     .AddProjections()
     .AddFiltering()
     .AddSorting()
@@ -37,7 +34,9 @@ builder.Services.AddGraphQLServer()
     {
         o.Scopes = ActivityScopes.All;
     })
-    .AddDiagnosticEventListener<MyListener>();
+    .AddDiagnosticEventListener<MyListener>()
+    .AddDefaultTransactionScopeHandler()
+    .AddMutationConventions();
 
 builder.Services.AddOpenTelemetryTracing(
     b =>
