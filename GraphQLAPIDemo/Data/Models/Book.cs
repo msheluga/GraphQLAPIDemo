@@ -8,11 +8,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
+    [Table("Book")]
     public partial class Book
     {
         public Book()
         {
-            BooksInGroups = new HashSet<BooksInGroups>();
+            BooksInGroups = new HashSet<BooksInGroup>();
         }
 
         [Key]
@@ -33,12 +34,12 @@ namespace GraphQLAPIDemo.Data.Models
         public Guid PressId { get; set; }
 
         [ForeignKey(nameof(AddressId))]
-        [InverseProperty("Book")]
+        [InverseProperty("Books")]
         public virtual Address Address { get; set; }
         [ForeignKey(nameof(PressId))]
-        [InverseProperty("Book")]
+        [InverseProperty("Books")]
         public virtual Press Press { get; set; }
-        [InverseProperty("Book")]
-        public virtual ICollection<BooksInGroups> BooksInGroups { get; set; }
+        [InverseProperty(nameof(BooksInGroup.Book))]
+        public virtual ICollection<BooksInGroup> BooksInGroups { get; set; }
     }
 }

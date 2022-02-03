@@ -8,13 +8,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
-    public partial class Users
+    public partial class User
     {
-        public Users()
+        public User()
         {
-            UserFieldAccess = new HashSet<UserFieldAccess>();
-            UserTableAccess = new HashSet<UserTableAccess>();
-            UsersInGroup = new HashSet<UsersInGroup>();
+            UserFieldAccesses = new HashSet<UserFieldAccess>();
+            UserTableAccesses = new HashSet<UserTableAccess>();
+            UsersInGroups = new HashSet<UsersInGroup>();
         }
 
         [Key]
@@ -27,11 +27,11 @@ namespace GraphQLAPIDemo.Data.Models
         [Column("status")]
         public int? Status { get; set; }
 
-        [InverseProperty("User")]
-        public virtual ICollection<UserFieldAccess> UserFieldAccess { get; set; }
-        [InverseProperty("User")]
-        public virtual ICollection<UserTableAccess> UserTableAccess { get; set; }
-        [InverseProperty("User")]
-        public virtual ICollection<UsersInGroup> UsersInGroup { get; set; }
+        [InverseProperty(nameof(UserFieldAccess.User))]
+        public virtual ICollection<UserFieldAccess> UserFieldAccesses { get; set; }
+        [InverseProperty(nameof(UserTableAccess.User))]
+        public virtual ICollection<UserTableAccess> UserTableAccesses { get; set; }
+        [InverseProperty(nameof(UsersInGroup.User))]
+        public virtual ICollection<UsersInGroup> UsersInGroups { get; set; }
     }
 }

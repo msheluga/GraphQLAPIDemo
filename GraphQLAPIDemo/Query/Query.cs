@@ -16,7 +16,7 @@ namespace GraphQLAPIDemo.Query
         {
             using var myActivity = MyActivitySource.StartActivity("Books");           
             myActivity?.AddEvent(new("Custom Log Event Books"));
-            return context.Book; 
+            return context.Books; 
         }
 
         [UseProjection]
@@ -26,7 +26,7 @@ namespace GraphQLAPIDemo.Query
         {
             using var myActivity = MyActivitySource.StartActivity("Books");
             myActivity?.AddEvent(new("Custom Log Event Addresses"));
-            return context.Address;
+            return context.Addresses;
         }
     }
 }

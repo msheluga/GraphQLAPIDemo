@@ -4,17 +4,9 @@ using GraphQLAPIDemo.Data.Models;
 namespace GraphQLAPIDemo.Mutation
 {
     public partial class Mutation
-    {
-        private readonly BooksContext context;
-
-        public Mutation(BooksContext booksContext)
-        {
-            this.context = booksContext;
-        }
-        public record InputBookPayLoad(string Isbn, string Title, string Author, Guid AddressId, Guid PressId);
-
-        public record CreateBookPayLoad(Book book);
-        public async Task<CreateBookPayLoad> AddBook(InputBookPayLoad input)
+    {        
+        
+        public async Task<Book> AddBook([Service] BooksContext context, Book input)
         {
             var book = new Book
             {
@@ -26,9 +18,9 @@ namespace GraphQLAPIDemo.Mutation
                 PressId = input.PressId
             };
 
-            context.Book.Add(book);
+            context.Books.Add(book);
             await context.SaveChangesAsync();
-            return new CreateBookPayLoad(book);
+            return book;
         }
     }
 }

@@ -84,7 +84,7 @@
    "UseDbContextSplitting": false,
    "UseFluentApiOnly": false,
    "UseHandleBars": false,
-   "UseInflector": false,
+   "UseInflector": true,
    "UseLegacyPluralizer": true,
    "UseManyToManyEntity": true,
    "UseNoConstructor": false,

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
+    [Table("UserTableAccess")]
     public partial class UserTableAccess
     {
         [Key]
@@ -17,10 +18,10 @@ namespace GraphQLAPIDemo.Data.Models
         public int TableAccessLevel { get; set; }
 
         [ForeignKey(nameof(TableId))]
-        [InverseProperty(nameof(Tables.UserTableAccess))]
-        public virtual Tables Table { get; set; }
+        [InverseProperty("UserTableAccesses")]
+        public virtual Table Table { get; set; }
         [ForeignKey(nameof(UserId))]
-        [InverseProperty(nameof(Users.UserTableAccess))]
-        public virtual Users User { get; set; }
+        [InverseProperty("UserTableAccesses")]
+        public virtual User User { get; set; }
     }
 }

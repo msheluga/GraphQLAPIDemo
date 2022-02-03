@@ -15,22 +15,22 @@ namespace GraphQLAPIDemo.Data
         {
         }
 
-        public virtual DbSet<Address> Address { get; set; }
-        public virtual DbSet<Book> Book { get; set; }
-        public virtual DbSet<BooksInGroups> BooksInGroups { get; set; }
-        public virtual DbSet<DeviceCodes> DeviceCodes { get; set; }
-        public virtual DbSet<Fields> Fields { get; set; }
-        public virtual DbSet<Groups> Groups { get; set; }
-        public virtual DbSet<Keys> Keys { get; set; }
-        public virtual DbSet<Permission> Permission { get; set; }
-        public virtual DbSet<PersistedGrants> PersistedGrants { get; set; }
-        public virtual DbSet<Press> Press { get; set; }
-        public virtual DbSet<Tables> Tables { get; set; }
-        public virtual DbSet<UserAccessView> UserAccessView { get; set; }
-        public virtual DbSet<UserFieldAccess> UserFieldAccess { get; set; }
-        public virtual DbSet<UserTableAccess> UserTableAccess { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<UsersInGroup> UsersInGroup { get; set; }
+        public virtual DbSet<Address> Addresses { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<BooksInGroup> BooksInGroups { get; set; }
+        public virtual DbSet<DeviceCode> DeviceCodes { get; set; }
+        public virtual DbSet<Field> Fields { get; set; }
+        public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<Key> Keys { get; set; }
+        public virtual DbSet<Permission> Permissions { get; set; }
+        public virtual DbSet<PersistedGrant> PersistedGrants { get; set; }
+        public virtual DbSet<Press> Presses { get; set; }
+        public virtual DbSet<Table> Tables { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserAccessView> UserAccessViews { get; set; }
+        public virtual DbSet<UserFieldAccess> UserFieldAccesses { get; set; }
+        public virtual DbSet<UserTableAccess> UserTableAccesses { get; set; }
+        public virtual DbSet<UsersInGroup> UsersInGroups { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -44,19 +44,19 @@ namespace GraphQLAPIDemo.Data
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
                 entity.HasOne(d => d.Address)
-                    .WithMany(p => p.Book)
+                    .WithMany(p => p.Books)
                     .HasForeignKey(d => d.AddressId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Book_Address");
 
                 entity.HasOne(d => d.Press)
-                    .WithMany(p => p.Book)
+                    .WithMany(p => p.Books)
                     .HasForeignKey(d => d.PressId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Book_Press");
             });
 
-            modelBuilder.Entity<BooksInGroups>(entity =>
+            modelBuilder.Entity<BooksInGroup>(entity =>
             {
                 entity.HasKey(e => new { e.BookId, e.GroupId });
 
@@ -73,7 +73,7 @@ namespace GraphQLAPIDemo.Data
                     .HasConstraintName("FK_BooksInGroups_Groups");
             });
 
-            modelBuilder.Entity<Fields>(entity =>
+            modelBuilder.Entity<Field>(entity =>
             {
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
@@ -84,7 +84,7 @@ namespace GraphQLAPIDemo.Data
                     .HasConstraintName("FK_Fields_Tables");
             });
 
-            modelBuilder.Entity<Groups>(entity =>
+            modelBuilder.Entity<Group>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
             });
@@ -99,9 +99,14 @@ namespace GraphQLAPIDemo.Data
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
             });
 
-            modelBuilder.Entity<Tables>(entity =>
+            modelBuilder.Entity<Table>(entity =>
             {
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
             modelBuilder.Entity<UserAccessView>(entity =>
@@ -114,13 +119,13 @@ namespace GraphQLAPIDemo.Data
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Field)
-                    .WithMany(p => p.UserFieldAccess)
+                    .WithMany(p => p.UserFieldAccesses)
                     .HasForeignKey(d => d.FieldId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserFieldAccess_Fields");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.UserFieldAccess)
+                    .WithMany(p => p.UserFieldAccesses)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserFieldAccess_Users");
@@ -131,21 +136,16 @@ namespace GraphQLAPIDemo.Data
                 entity.Property(e => e.Id).ValueGeneratedNever();
 
                 entity.HasOne(d => d.Table)
-                    .WithMany(p => p.UserTableAccess)
+                    .WithMany(p => p.UserTableAccesses)
                     .HasForeignKey(d => d.TableId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserTableAccess_Tables");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.UserTableAccess)
+                    .WithMany(p => p.UserTableAccesses)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UserTableAccess_Users");
-            });
-
-            modelBuilder.Entity<Users>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
             modelBuilder.Entity<UsersInGroup>(entity =>
@@ -153,13 +153,13 @@ namespace GraphQLAPIDemo.Data
                 entity.HasKey(e => new { e.UserId, e.GroupId });
 
                 entity.HasOne(d => d.Group)
-                    .WithMany(p => p.UsersInGroup)
+                    .WithMany(p => p.UsersInGroups)
                     .HasForeignKey(d => d.GroupId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UsersInGroup_Groups");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.UsersInGroup)
+                    .WithMany(p => p.UsersInGroups)
                     .HasForeignKey(d => d.UserId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_UsersInGroup_Users");
