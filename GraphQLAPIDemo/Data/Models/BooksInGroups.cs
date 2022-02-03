@@ -18,5 +18,8 @@ namespace GraphQLAPIDemo.Data.Models
         [ForeignKey(nameof(BookId))]
         [InverseProperty("BooksInGroups")]
         public virtual Book Book { get; set; }
+        [ForeignKey(nameof(GroupId))]
+        [InverseProperty(nameof(Groups.BooksInGroups))]
+        public virtual Groups Group { get; set; }
     }
 }

@@ -18,25 +18,25 @@ builder.Logging.ClearProviders();
 builder.Services.AddLogging();
 builder.Services.AddHealthChecks();
 
-builder.Services.AddPooledDbContextFactory<BooksContext>(opt =>
-                opt.UseSqlServer(dbString));
+builder.Services.AddPooledDbContextFactory<BooksContext>(
+     (s, o) => o
+                .UseSqlServer(dbString)
+                .UseLoggerFactory(s.GetRequiredService<ILoggerFactory>()));
 builder.Services.AddScoped<BooksContext>(sp =>
     sp.GetRequiredService<IDbContextFactory<BooksContext>>().CreateDbContext());
 builder.Services.AddHealthChecks();
+
 builder.Services.AddGraphQLServer()
     .AddAuthorization()
     .AddQueryType<Query>()
     .AddProjections()
     .AddFiltering()
     .AddSorting()
-    .AddInstrumentation(
-    o =>
-    {
-        o.Scopes = ActivityScopes.All;
-    })
+    .AddInstrumentation()
     .AddDiagnosticEventListener<MyListener>()
     .AddDefaultTransactionScopeHandler()
-    .AddMutationConventions();
+    //.AddMutationConventions();
+    .AddMutationType<Mutation>();
 
 builder.Services.AddOpenTelemetryTracing(
     b =>
@@ -45,7 +45,7 @@ builder.Services.AddOpenTelemetryTracing(
         b.AddAspNetCoreInstrumentation();
         b.AddHotChocolateInstrumentation();
         b.AddSource("GraphQLAPIDemo");
-        b.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("GraphQLAPIDemo"));
+        //b.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("GraphQLAPIDemo"));
         b.AddConsoleExporter();
         b.AddFileExporter();
     });

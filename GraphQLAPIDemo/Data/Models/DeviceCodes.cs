@@ -31,5 +31,8 @@ namespace GraphQLAPIDemo.Data.Models
         public DateTime Expiration { get; set; }
         [Required]
         public string Data { get; set; }
+        [Required]
+        [Column("Intentional_Long_Name")]
+        public string IntentionalLongName { get; set; }
     }
 }

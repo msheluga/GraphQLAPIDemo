@@ -16,16 +16,11 @@ namespace GraphQLAPIDemo.Data
         }
 
         public virtual DbSet<Address> Address { get; set; }
-        public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
-        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<Book> Book { get; set; }
         public virtual DbSet<BooksInGroups> BooksInGroups { get; set; }
         public virtual DbSet<DeviceCodes> DeviceCodes { get; set; }
         public virtual DbSet<Fields> Fields { get; set; }
+        public virtual DbSet<Groups> Groups { get; set; }
         public virtual DbSet<Keys> Keys { get; set; }
         public virtual DbSet<Permission> Permission { get; set; }
         public virtual DbSet<PersistedGrants> PersistedGrants { get; set; }
@@ -42,45 +37,6 @@ namespace GraphQLAPIDemo.Data
             modelBuilder.Entity<Address>(entity =>
             {
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-            });
-
-            modelBuilder.Entity<AspNetRoles>(entity =>
-            {
-                entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
-                    .IsUnique()
-                    .HasFilter("([NormalizedName] IS NOT NULL)");
-            });
-
-            modelBuilder.Entity<AspNetUserLogins>(entity =>
-            {
-                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
-            });
-
-            modelBuilder.Entity<AspNetUserTokens>(entity =>
-            {
-                entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
-            });
-
-            modelBuilder.Entity<AspNetUsers>(entity =>
-            {
-                entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
-                    .IsUnique()
-                    .HasFilter("([NormalizedUserName] IS NOT NULL)");
-
-                entity.HasMany(d => d.Role)
-                    .WithMany(p => p.User)
-                    .UsingEntity<Dictionary<string, object>>(
-                        "AspNetUserRoles",
-                        l => l.HasOne<AspNetRoles>().WithMany().HasForeignKey("RoleId"),
-                        r => r.HasOne<AspNetUsers>().WithMany().HasForeignKey("UserId"),
-                        j =>
-                        {
-                            j.HasKey("UserId", "RoleId");
-
-                            j.ToTable("AspNetUserRoles");
-
-                            j.HasIndex(new[] { "RoleId" }, "IX_AspNetUserRoles_RoleId");
-                        });
             });
 
             modelBuilder.Entity<Book>(entity =>
@@ -109,6 +65,12 @@ namespace GraphQLAPIDemo.Data
                     .HasForeignKey(d => d.BookId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_BooksInGroups_Book");
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.BooksInGroups)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_BooksInGroups_Groups");
             });
 
             modelBuilder.Entity<Fields>(entity =>
@@ -120,6 +82,11 @@ namespace GraphQLAPIDemo.Data
                     .HasForeignKey(d => d.TableId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Fields_Tables");
+            });
+
+            modelBuilder.Entity<Groups>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
             });
 
             modelBuilder.Entity<Permission>(entity =>
@@ -184,6 +151,12 @@ namespace GraphQLAPIDemo.Data
             modelBuilder.Entity<UsersInGroup>(entity =>
             {
                 entity.HasKey(e => new { e.UserId, e.GroupId });
+
+                entity.HasOne(d => d.Group)
+                    .WithMany(p => p.UsersInGroup)
+                    .HasForeignKey(d => d.GroupId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_UsersInGroup_Groups");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.UsersInGroup)

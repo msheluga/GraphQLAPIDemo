@@ -15,6 +15,9 @@ namespace GraphQLAPIDemo.Data.Models
         [Key]
         public Guid GroupId { get; set; }
 
+        [ForeignKey(nameof(GroupId))]
+        [InverseProperty(nameof(Groups.UsersInGroup))]
+        public virtual Groups Group { get; set; }
         [ForeignKey(nameof(UserId))]
         [InverseProperty(nameof(Users.UsersInGroup))]
         public virtual Users User { get; set; }
