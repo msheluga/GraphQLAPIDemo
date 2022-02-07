@@ -27,6 +27,8 @@ builder.Services.AddScoped<BooksContext>(sp =>
 builder.Services.AddHealthChecks();
 
 builder.Services.AddGraphQLServer()
+    .BindRuntimeType<Guid, UuidType>()
+    .BindRuntimeType<Guid?, UuidType>()
     .AddAuthorization()
     .AddQueryType<Query>()
     .AddProjections()
@@ -36,7 +38,7 @@ builder.Services.AddGraphQLServer()
     .AddDiagnosticEventListener<MyListener>()
     .AddDefaultTransactionScopeHandler()
     //.AddMutationConventions();
-    .AddMutationType<Mutation>();
+    .AddMutationType<MutationType>();
 
 builder.Services.AddOpenTelemetryTracing(
     b =>
