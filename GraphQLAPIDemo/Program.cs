@@ -13,10 +13,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 var dbString = builder.Configuration.GetConnectionString("BookDatabase");
 
-//builder.Host.UseSerilog((ctx, lc) => lc
-//    .MinimumLevel.Information()
-//.WriteTo.File("log-.txt", rollingInterval: RollingInterval.Day));
-
 builder.Logging.ClearProviders();
 builder.Services.AddLogging();
 builder.Services.AddHealthChecks();
