@@ -1,6 +1,5 @@
 ﻿using GraphQLAPIDemo.Data;
 using GraphQLAPIDemo.Data.Models;
-using GraphQLAPIDemo.Extensions;
 using GraphQLAPIDemo.Listener;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
