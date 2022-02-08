@@ -26,14 +26,19 @@ builder.Services.AddScoped<BooksContext>(sp =>
     sp.GetRequiredService<IDbContextFactory<BooksContext>>().CreateDbContext());
 builder.Services.AddHealthChecks();
 
-builder.Services.AddGraphQLServer()
+builder.Services.AddHttpResultSerializer(
+    batchSerialization: HotChocolate.AspNetCore.Serialization.HttpResultSerialization.JsonArray
+    );
+
+builder.Services.AddGraphQLServer() 
+    .AddExportDirectiveType()
     .BindRuntimeType<Guid, UuidType>()
     .BindRuntimeType<Guid?, UuidType>()
     .AddAuthorization()
     .AddQueryType<Query>()
     .AddProjections()
     .AddFiltering()
-    .AddSorting()
+    .AddSorting()    
     .AddInstrumentation()
     .AddDiagnosticEventListener<MyListener>()
     .AddDefaultTransactionScopeHandler()
