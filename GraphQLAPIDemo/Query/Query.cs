@@ -43,13 +43,13 @@ namespace GraphQLAPIDemo.Query
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
         [UseFiltering]        
-        public Address GetAddressesById([Service] BooksContext context, Guid id)
+        public Address GetAddressesById([Service] IDbContextFactory<BooksContext> dbContextFactory, Guid id)
         {
             if (id == new Guid())
             {
                 throw new Exception("ID cannot be null");
             }
-            //var context = dbContextFactory.CreateDbContext();
+            var context = dbContextFactory.CreateDbContext();
             using var myActivity = MyActivitySource.StartActivity("Books");
             myActivity?.AddEvent(new("Custom Log Event Addresses"));
             return context.Addresses.Where(x => id.Equals(x.Id)).SingleOrDefault();

@@ -51,8 +51,7 @@ namespace GraphQLAPIDemo.Mutation
                 book.AddressId = edit.AddressId;
                 book.PressId = edit.PressId;
             }
-            context.Books.Update(book);
-            //context.Books.Add(book);
+            context.Books.Update(book);            
             await context.SaveChangesAsync();
             return book;
         }
