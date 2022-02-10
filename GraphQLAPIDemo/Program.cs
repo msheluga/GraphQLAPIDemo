@@ -42,7 +42,7 @@ builder.Services.AddGraphQLServer()
     .AddInstrumentation()
     .AddDiagnosticEventListener<MyListener>()
     .AddDefaultTransactionScopeHandler()
-    //.AddMutationConventions();
+    //.AddMutationConventions();   
     .AddMutationType<MutationType>();
 
 builder.Services.AddOpenTelemetryTracing(

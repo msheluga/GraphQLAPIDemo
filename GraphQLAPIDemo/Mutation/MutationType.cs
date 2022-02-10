@@ -7,7 +7,7 @@ namespace GraphQLAPIDemo.Mutation
         protected override void Configure(
             IObjectTypeDescriptor<Mutation> descriptor)
         {
-            descriptor.Field(f => f.AddBook(default)).UseMutationConvention();
+            descriptor.Field(f => f.AddBook(default!)).UseMutationConvention();
         }
     }
 

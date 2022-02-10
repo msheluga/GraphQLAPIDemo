@@ -1,32 +1,33 @@
 ﻿using GraphQLAPIDemo.Data;
 using GraphQLAPIDemo.Data.Models;
 using GraphQLAPIDemo.Listener;
+using HotChocolate.Data.Filters;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace GraphQLAPIDemo.Query
 {
-    public partial class Query
+    public class Query
     {
         public static readonly ActivitySource MyActivitySource = new("GraphQLAPIDemo");
 
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        
-        public async Task<IQueryable<Book>> GetBooks([Service] IDbContextFactory<BooksContext> dbContextFactory)
+
+        public IQueryable<Book> GetBooks([Service] IDbContextFactory<BooksContext> dbContextFactory)
         {
             var context = dbContextFactory.CreateDbContext();
-            using var myActivity = MyActivitySource.StartActivity("Books");           
+            using var myActivity = MyActivitySource.StartActivity("Books");
             myActivity?.AddEvent(new("Custom Log Event Books"));
-            return context.Books; 
+            return context.Books;
         }
 
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        
-        public async Task<IQueryable<Address>> GetAddresses([Service] IDbContextFactory<BooksContext> dbContextFactory)
+        [GraphQLDescription("This Query gets Addresses")]
+        public IQueryable<Address> GetAddresses([Service] IDbContextFactory<BooksContext> dbContextFactory)
         {
             var context = dbContextFactory.CreateDbContext();
             using var myActivity = MyActivitySource.StartActivity("Books");
@@ -34,17 +35,24 @@ namespace GraphQLAPIDemo.Query
             return context.Addresses;
         }
 
-
-        [UseProjection]
-        [UseFiltering]
-        [UseSorting]
-       
-        public async Task<IQueryable<Address>> GetAddressesById(Guid Id, [Service] IDbContextFactory<BooksContext> dbContextFactory)
+        /// <summary>
+        /// example of how to filter by id query
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="id">the incoming ID, has to be lowercase due to GRaphql mapping</param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        [UseFiltering]        
+        public Address GetAddressesById([Service] BooksContext context, Guid id)
         {
-            var context = dbContextFactory.CreateDbContext();
+            if (id == new Guid())
+            {
+                throw new Exception("ID cannot be null");
+            }
+            //var context = dbContextFactory.CreateDbContext();
             using var myActivity = MyActivitySource.StartActivity("Books");
             myActivity?.AddEvent(new("Custom Log Event Addresses"));
-            return context.Addresses.Where(x => Id.Equals(x));
+            return context.Addresses.Where(x => id.Equals(x.Id)).SingleOrDefault();
         }
     }
 }
