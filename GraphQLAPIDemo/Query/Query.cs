@@ -39,7 +39,7 @@ namespace GraphQLAPIDemo.Query
         /// example of how to filter by id query
         /// </summary>
         /// <param name="context"></param>
-        /// <param name="id">the incoming ID, has to be lowercase due to GRaphql mapping</param>
+        /// <param name="id">the incoming ID, has to be lowercase due to Graphql mapping</param>
         /// <returns></returns>
         /// <exception cref="Exception"></exception>
         [UseFiltering]        
