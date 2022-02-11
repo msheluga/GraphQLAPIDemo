@@ -79,3 +79,27 @@ public async Task<Book> AddBook(InputBookPayLoad input)
             return book;
         }
 ```
+
+In the example,  we have a mutation called AddBook, with a input variable type called InputBookPayLoad.  To call the mutation we call it like so:
+
+```graphql
+mutation($newBook:InputBookPayLoadInput!) {
+  addBook(input: $newBook) {
+    id
+  }
+}
+
+--GraphQL variable 
+{
+  "newBook" : {
+    "isbn"  : "3-8453-3507-4",
+    "title" : "A good sample Insert",
+    "author": "Elie Wiesel",
+    "addressId": "E8EC7B2D-0804-8FCB-2113-4238E16A36CA",
+    "pressId": "1E3E4158-3687-1175-F730-4FF545DF8EA9"
+  }
+}
+```
+
+In this mutation we define the variable newBook and state it is type InputBookPayLoadInput.  The ! means it is not a nullable type.  Then using that predefined data we can use it in the addBook method and returnm the id when it is done inserting the data.
+as shown the newbook has to declare the variables as shown in the C# code and pass that as input. when the call is made, it will add a new book with that data and return the new Id.  Updates can be done the same way where the update data is declared, the update method is then called and invoked in a similiar fashion and would also return the updated entity.  
