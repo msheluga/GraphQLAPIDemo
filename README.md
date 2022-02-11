@@ -34,13 +34,13 @@ and the GraphQL query would look like
                 city
             }
         }
-    ```
+ ```
 
 ### Batching using export to chain queries
 
 Batching helps alleviate the 'chattyness' of GraphQL and allows the queries to be gouped to simplify the work.  The ```@export``` command allows the queries to be linked.  
 If we wanted to have the results of one query filter another query we would use @export like so (assuming the same url as before in batching)
-    ```graphql
+```graphql
         query A {
             books {
                 addressId @export(as: "ids")
@@ -54,7 +54,7 @@ If we wanted to have the results of one query filter another query we would use 
                 city
             }
         }
-    ```
+```
 The AddressIds are exported as a variable ids (lower case is important since it matches the routes)  Note that is now variables are declared in GraphQL, by using the dollar sign More about variables when we reach mutations.
 
 ## Mutations
@@ -110,5 +110,5 @@ as shown the newbook has to declare the variables as shown in the C# code and pa
 
 To enable security on Mutations, the [Authorize] attribute must be applied to the mutation itself.  This will then trigger the IAuthorizeHander that we have implemented associated to the Query.  The check will occur at the Mutation level and not the column level.  All incoming data would be checked ay that point.
 
-The way that GraphQL requires columns to be explicitally called generates some issues when it comes to add and edit capability.  If the user doesn't have access to a field in a table.  There are a couple of ways to handle the issue.  One possible solution would be to modify the tables so that they are aligned to their permissions.   View can be built for items for queries if the application has permissions to multiple parts of the data.  This also assumes that all permissions are the same.  If the permissions differ then we may have to implement something like a patch that can inspect the jsondata coming in and ensure that the fields in the json data match the columns allowed for the operation.
+The way that GraphQL requires columns to be explicitally called generates some issues when it comes to add and edit capability.  If the user doesn't have access to a field in a table.  There are a couple of ways to handle the issue.  One possible solution would be to modify the tables so that they are aligned to their permissions.   View can be built for items for queries if the application has permissions to multiple parts of the data.  This also assumes that all permissions are the same.  If the permissions differ then we may have to implement something like a patch that can inspect the json data coming in and ensure that the fields in the json data match the columns allowed for the operation.
 
