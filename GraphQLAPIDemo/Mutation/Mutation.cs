@@ -50,10 +50,12 @@ namespace GraphQLAPIDemo.Mutation
                 book.Price = edit.Price;
                 book.AddressId = edit.AddressId;
                 book.PressId = edit.PressId;
+                context.Books.Update(book);            
+                await context.SaveChangesAsync();
+                return book;
             }
-            context.Books.Update(book);            
-            await context.SaveChangesAsync();
-            return book;
+
+            return new Book();
         }
     }
 }
