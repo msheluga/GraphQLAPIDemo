@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using HotChocolate.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
@@ -27,6 +28,7 @@ namespace GraphQLAPIDemo.Data.Models
         public string Title { get; set; }
         [Required]
         [StringLength(50)]
+        [Authorize(Policy ="Author")]
         public string Author { get; set; }
         [Column(TypeName = "money")]
         public decimal Price { get; set; }

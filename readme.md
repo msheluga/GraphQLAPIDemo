@@ -54,7 +54,7 @@ If we wanted to have the results of one query filter another query we would use 
             }
         }
     ```
-The AddressIds are exported as a variable ids (lower case is important since it matches the routes)  Note that is now variables are declared in GraphQL, by using the dollar sign More about variables when we reach mutations
+The AddressIds are exported as a variable ids (lower case is important since it matches the routes)  Note that is now variables are declared in GraphQL, by using the dollar sign More about variables when we reach mutations.
 
 ## Mutations
 Mutations are the way that we edit, add, and delete data.  Generally a mutation required the defined input, the return type.  Hot Chocolate uses a specific naming convention in the input and return type variable naming.  To add a book entry you need to define the input as *xxxxPayLoad*.  For this example I am using the new C# feature of record to make it easier to define the input objects.  
@@ -102,4 +102,11 @@ mutation($newBook:InputBookPayLoadInput!) {
 ```
 
 In this mutation we define the variable newBook and state it is type InputBookPayLoadInput.  The ! means it is not a nullable type.  Then using that predefined data we can use it in the addBook method and returnm the id when it is done inserting the data.
-as shown the newbook has to declare the variables as shown in the C# code and pass that as input. when the call is made, it will add a new book with that data and return the new Id.  Updates can be done the same way where the update data is declared, the update method is then called and invoked in a similiar fashion and would also return the updated entity.  
+as shown the newbook has to declare the variables as shown in the C# code and pass that as input. when the call is made, it will add a new book with that data and return the new Id.  Updates can be done the same way where the update data is declared, the update method is then called and invoked in a similiar fashion and would also return the updated entity.  With mutations we added the
+*.AddDefaultTransactionScopeHandler()* in the Program.cs so we are putting those items in a transaction scope.  Mutations can be executed like queries and can be batched as well.  When mutations are batched they are not in parallel, but in serial so they can depend on the results of a previous insert or update, like inserting a child table and exporting that id into a variable and feeing that into the parent insert that needed that child id.
+
+### Mutation security
+
+To enable security on Mutations, the [Authorize] attribute must be applied to the mutation itself.  This will then trigger the IAuthorizeHander that we have implemented associated to the Query.  The check will occur at the Mutation level and not the column level.  All incoming data would be checked ay that point.
+
+The way that GraphQL requires columns to be explicitally called generates some issues when it comes to add and edit capability.  If the user doesn't have access to a field in a table.  There are a couple of ways to handle the issue.  One possible solution would be to modify the tables so that they are aligned to their permissions.   View can be built for items for queries if the application has permissions to multiple parts of the data.  This also assumes that all permissions are the same.  If the permissions differ then we may have to implement something like a patch that can inspect the jsondata coming in and ensure that the fields in the json data match the columns allowed for the operation.

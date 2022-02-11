@@ -1,5 +1,6 @@
 ﻿using GraphQLAPIDemo.Data;
 using GraphQLAPIDemo.Data.Models;
+using HotChocolate.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Mutation
@@ -13,7 +14,8 @@ namespace GraphQLAPIDemo.Mutation
             this.dbContextFactory = dbContextFactory;
         }
         public record InputBookPayLoad(string Isbn, string Title, string Author, decimal Price, Guid AddressId, Guid PressId);
-        public record EditBookPayload(Guid Id, string Isbn, string Title, string Author, decimal Price, Guid AddressId, Guid PressId);       
+        public record EditBookPayload(Guid Id, string Isbn, string Title, string Author, decimal Price, Guid AddressId, Guid PressId);  
+        [Authorize]
         public async Task<Book> AddBook(InputBookPayLoad input)
         {
             var context = dbContextFactory.CreateDbContext();

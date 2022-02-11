@@ -1,14 +1,11 @@
 using GraphQLAPIDemo.Data;
+using GraphQLAPIDemo.Listener;
+using GraphQLAPIDemo.Mutation;
 using GraphQLAPIDemo.Query;
 using Microsoft.EntityFrameworkCore;
-using OpenTelemetry.Trace;
-using OpenTelemetry.Metrics;
-using OpenTelemetry.Resources;
-using Microsoft.AspNetCore.Hosting;
 using OpenTelemetry.Instrumentation.AspNetCore;
-using GraphQLAPIDemo.Listener;
-using HotChocolate.Diagnostics;
-using GraphQLAPIDemo.Mutation;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Trace;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,16 +22,18 @@ builder.Services.AddPooledDbContextFactory<BooksContext>(
 builder.Services.AddScoped<BooksContext>(sp =>
     sp.GetRequiredService<IDbContextFactory<BooksContext>>().CreateDbContext());
 builder.Services.AddHealthChecks();
+//builder.Services.AddAuthorization();
 
 builder.Services.AddHttpResultSerializer(
     batchSerialization: HotChocolate.AspNetCore.Serialization.HttpResultSerialization.JsonArray
     );
 
-builder.Services.AddGraphQLServer() 
+builder.Services.AddGraphQLServer()     
     .AddExportDirectiveType()
     .BindRuntimeType<Guid, UuidType>()
     .BindRuntimeType<Guid?, UuidType>()
-    .AddAuthorization()
+    //.AddAuthorization()
+    //.AddAuthorizationHandler<MinimumPermissionHandler>()
     .AddQueryType<Query>()
     .AddProjections()
     .AddFiltering()
