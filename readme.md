@@ -1,8 +1,8 @@
-﻿# Mutations, Batching and Treansactions
+﻿# Mutations, Batching and Transactions
 
 This shows example of building, using Mutations, bacthing in query and enabling transactions
 
-slight modifications had to be made the the initial Query class to enable the ability to call multiple queries in the same post message
+slight modifications had to be made the initial Query class to enable the ability to call multiple queries in the same post message
 
 ## Batching
 
@@ -80,7 +80,7 @@ public async Task<Book> AddBook(InputBookPayLoad input)
         }
 ```
 
-In the example,  we have a mutation called AddBook, with a input variable type called InputBookPayLoad.  To call the mutation we call it like so:
+In the example, we have a mutation called AddBook, with a input variable type called InputBookPayLoad.  To call the mutation we call it like so:
 
 ```graphql
 mutation($newBook:InputBookPayLoadInput!) {
