@@ -1,7 +1,12 @@
 ﻿using GraphQLAPIDemo.Data;
 using GraphQLAPIDemo.Data.Models;
 using HotChocolate.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.JsonPatch.Operations;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System.Text.Json;
 
 namespace GraphQLAPIDemo.Mutation
 {
@@ -15,6 +20,9 @@ namespace GraphQLAPIDemo.Mutation
         }
         public record InputBookPayLoad(string Isbn, string Title, string Author, decimal Price, Guid AddressId, Guid PressId);
         public record EditBookPayload(Guid Id, string Isbn, string Title, string Author, decimal Price, Guid AddressId, Guid PressId);  
+
+        public record PatchObject(string op, string path, object value);
+        
         [Authorize]
         public async Task<Book> AddBook(InputBookPayLoad input)
         {
@@ -59,5 +67,59 @@ namespace GraphQLAPIDemo.Mutation
 
             return new Book();
         }
-    }
+
+        public async Task<Book> PatchBook(string patch, Guid id)
+        {
+            if (String.IsNullOrEmpty(patch))
+            {
+                throw new Exception("no patch data present");
+            }
+
+            var book = new Book();
+            var context = dbContextFactory.CreateDbContext();
+            book = await context.Books.FindAsync(id);
+            if (book != null)
+            {
+                List<PatchObject>? patchObjects = JsonConvert.DeserializeObject<List<PatchObject>>(patch);
+                if (patchObjects != null)
+                {
+                    if (patchObjects.Count > 0)
+                    {
+                        //generate transaction scope amd then commit                        
+                        foreach (PatchObject patchObject in patchObjects)
+                        {
+                            var patchDocument = new JsonPatchDocument();
+                            switch (patchObject.op.ToLower())
+                            {
+                                case "add":
+                                    patchDocument.Add(patchObject.path, patchObject.value);
+                                    break;
+                                case "replace":
+                                    patchDocument.Replace(patchObject.path, patchObject.value);
+                                    break;
+                                case "remove":
+                                    patchDocument.Remove(patchObject.path);
+                                    break;
+                                //not supporting Add, Copy or Test
+                                default:
+                                    break;
+                            }
+                                                                
+                            patchDocument.ApplyTo(book);
+                            await context.SaveChangesAsync();
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("no data found");
+                    }
+                }               
+            }
+            else
+            {
+                throw new Exception("no data found");
+            }
+            return book;
+        }
+    }    
 }
