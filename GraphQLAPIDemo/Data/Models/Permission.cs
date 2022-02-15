@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
+    [Table("Permission")]
     public partial class Permission
     {
         [Key]

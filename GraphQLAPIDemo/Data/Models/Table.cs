@@ -8,12 +8,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
-    public partial class Tables
+    public partial class Table
     {
-        public Tables()
+        public Table()
         {
-            Fields = new HashSet<Fields>();
-            UserTableAccess = new HashSet<UserTableAccess>();
+            Fields = new HashSet<Field>();
+            UserTableAccesses = new HashSet<UserTableAccess>();
         }
 
         [Key]
@@ -23,9 +23,9 @@ namespace GraphQLAPIDemo.Data.Models
         [Required]
         public string ControllerName { get; set; }
 
-        [InverseProperty("Table")]
-        public virtual ICollection<Fields> Fields { get; set; }
-        [InverseProperty("Table")]
-        public virtual ICollection<UserTableAccess> UserTableAccess { get; set; }
+        [InverseProperty(nameof(Field.Table))]
+        public virtual ICollection<Field> Fields { get; set; }
+        [InverseProperty(nameof(UserTableAccess.Table))]
+        public virtual ICollection<UserTableAccess> UserTableAccesses { get; set; }
     }
 }

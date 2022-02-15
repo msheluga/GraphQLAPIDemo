@@ -8,16 +8,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
-    [Index(nameof(DeviceCode), Name = "IX_DeviceCodes_DeviceCode", IsUnique = true)]
+    [Index(nameof(DeviceCode1), Name = "IX_DeviceCodes_DeviceCode", IsUnique = true)]
     [Index(nameof(Expiration), Name = "IX_DeviceCodes_Expiration")]
-    public partial class DeviceCodes
+    public partial class DeviceCode
     {
         [Key]
         [StringLength(200)]
         public string UserCode { get; set; }
         [Required]
+        [Column("DeviceCode")]
         [StringLength(200)]
-        public string DeviceCode { get; set; }
+        public string DeviceCode1 { get; set; }
         [StringLength(200)]
         public string SubjectId { get; set; }
         [StringLength(100)]
@@ -31,5 +32,8 @@ namespace GraphQLAPIDemo.Data.Models
         public DateTime Expiration { get; set; }
         [Required]
         public string Data { get; set; }
+        [Required]
+        [Column("Intentional_Long_Name")]
+        public string IntentionalLongName { get; set; }
     }
 }

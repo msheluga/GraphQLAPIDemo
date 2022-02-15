@@ -12,7 +12,7 @@ namespace GraphQLAPIDemo.Data.Models
     [Index(nameof(Expiration), Name = "IX_PersistedGrants_Expiration")]
     [Index(nameof(SubjectId), nameof(ClientId), nameof(Type), Name = "IX_PersistedGrants_SubjectId_ClientId_Type")]
     [Index(nameof(SubjectId), nameof(SessionId), nameof(Type), Name = "IX_PersistedGrants_SubjectId_SessionId_Type")]
-    public partial class PersistedGrants
+    public partial class PersistedGrant
     {
         [Key]
         [StringLength(200)]

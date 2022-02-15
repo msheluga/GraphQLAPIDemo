@@ -18,34 +18,6 @@
          "ObjectType": 0
       },
       {
-         "Name": "[dbo].[AspNetRoleClaims]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[AspNetRoles]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[AspNetUserClaims]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[AspNetUserLogins]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[AspNetUserRoles]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[AspNetUsers]",
-         "ObjectType": 0
-      },
-      {
-         "Name": "[dbo].[AspNetUserTokens]",
-         "ObjectType": 0
-      },
-      {
          "Name": "[dbo].[Book]",
          "ObjectType": 0
       },
@@ -59,6 +31,10 @@
       },
       {
          "Name": "[dbo].[Fields]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Groups]",
          "ObjectType": 0
       },
       {
@@ -108,9 +84,9 @@
    "UseDbContextSplitting": false,
    "UseFluentApiOnly": false,
    "UseHandleBars": false,
-   "UseInflector": false,
+   "UseInflector": true,
    "UseLegacyPluralizer": true,
-   "UseManyToManyEntity": false,
+   "UseManyToManyEntity": true,
    "UseNoConstructor": false,
    "UseNoDefaultConstructor": true,
    "UseNoNavigations": false,

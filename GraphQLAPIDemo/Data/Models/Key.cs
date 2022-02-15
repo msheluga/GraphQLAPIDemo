@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace GraphQLAPIDemo.Data.Models
 {
     [Index(nameof(Use), Name = "IX_Keys_Use")]
-    public partial class Keys
+    public partial class Key
     {
         [Key]
         public string Id { get; set; }

@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
+    [Table("UsersInGroup")]
     public partial class UsersInGroup
     {
         [Key]
@@ -15,8 +16,11 @@ namespace GraphQLAPIDemo.Data.Models
         [Key]
         public Guid GroupId { get; set; }
 
+        [ForeignKey(nameof(GroupId))]
+        [InverseProperty("UsersInGroups")]
+        public virtual Group Group { get; set; }
         [ForeignKey(nameof(UserId))]
-        [InverseProperty(nameof(Users.UsersInGroup))]
-        public virtual Users User { get; set; }
+        [InverseProperty("UsersInGroups")]
+        public virtual User User { get; set; }
     }
 }

@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
-    public partial class Fields
+    public partial class Field
     {
-        public Fields()
+        public Field()
         {
-            UserFieldAccess = new HashSet<UserFieldAccess>();
+            UserFieldAccesses = new HashSet<UserFieldAccess>();
         }
 
         [Key]
@@ -27,9 +27,9 @@ namespace GraphQLAPIDemo.Data.Models
         public int FieldOrder { get; set; }
 
         [ForeignKey(nameof(TableId))]
-        [InverseProperty(nameof(Tables.Fields))]
-        public virtual Tables Table { get; set; }
-        [InverseProperty("Field")]
-        public virtual ICollection<UserFieldAccess> UserFieldAccess { get; set; }
+        [InverseProperty("Fields")]
+        public virtual Table Table { get; set; }
+        [InverseProperty(nameof(UserFieldAccess.Field))]
+        public virtual ICollection<UserFieldAccess> UserFieldAccesses { get; set; }
     }
 }

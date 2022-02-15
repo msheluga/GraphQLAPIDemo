@@ -4,16 +4,16 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using HotChocolate.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
+    [Table("Address")]
     public partial class Address
     {
         public Address()
         {
-            Book = new HashSet<Book>();
+            Books = new HashSet<Book>();
         }
 
         [Key]
@@ -22,10 +22,10 @@ namespace GraphQLAPIDemo.Data.Models
         [StringLength(50)]
         public string City { get; set; }
         [Required]
-        [StringLength(50)]        
+        [StringLength(50)]
         public string Street { get; set; }
 
-        [InverseProperty("Address")]
-        public virtual ICollection<Book> Book { get; set; }
+        [InverseProperty(nameof(Book.Address))]
+        public virtual ICollection<Book> Books { get; set; }
     }
 }
