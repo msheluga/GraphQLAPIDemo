@@ -21,6 +21,7 @@ builder.Services.AddPooledDbContextFactory<BooksContext>(
                 .UseLoggerFactory(s.GetRequiredService<ILoggerFactory>()));
 builder.Services.AddScoped<BooksContext>(sp =>
     sp.GetRequiredService<IDbContextFactory<BooksContext>>().CreateDbContext());
+
 builder.Services.AddHealthChecks();
 //builder.Services.AddAuthorization();
 
@@ -41,8 +42,8 @@ builder.Services.AddGraphQLServer()
     .AddInstrumentation()
     .AddDiagnosticEventListener<MyListener>()
     .AddDefaultTransactionScopeHandler()
-    //.AddMutationConventions();   
-    .AddMutationType<MutationType>();
+    //.AddMutationConventions();    
+    .AddMutationType<Mutation>();
 
 builder.Services.AddOpenTelemetryTracing(
     b =>
