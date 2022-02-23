@@ -11,20 +11,14 @@ using System.Text.Json;
 namespace GraphQLAPIDemo.Mutation
 {
     public partial class Mutation
-    {
-        private readonly IDbContextFactory<BooksContext> dbContextFactory;
-
-        public Mutation(IDbContextFactory<BooksContext> dbContextFactory)
-        {
-            this.dbContextFactory = dbContextFactory;
-        }
+    {  
         public record InputBookPayLoad(string Isbn, string Title, string Author, decimal Price, Guid AddressId, Guid PressId);
         public record EditBookPayload(Guid Id, string Isbn, string Title, string Author, decimal Price, Guid AddressId, Guid PressId);  
 
         public record PatchObject(string op, string path, object value);
         
         [Authorize]
-        public async Task<Book> AddBook(InputBookPayLoad input)
+        public async Task<Book> AddBook([Service] IDbContextFactory<BooksContext> dbContextFactory, InputBookPayLoad input)
         {
             var context = dbContextFactory.CreateDbContext();
             var book = new Book
@@ -43,7 +37,7 @@ namespace GraphQLAPIDemo.Mutation
             return book;
         }
 
-        public async Task<Book> EditBook(EditBookPayload edit)
+        public async Task<Book> EditBook([Service] IDbContextFactory<BooksContext> dbContextFactory, EditBookPayload edit)
         {
             var context = dbContextFactory.CreateDbContext();
             if (edit.Id == new Guid() || edit.Id == Guid.Empty)
@@ -68,7 +62,7 @@ namespace GraphQLAPIDemo.Mutation
             return new Book();
         }
 
-        public async Task<Book> PatchBook(string patch, Guid id)
+        public async Task<Book> PatchBook([Service] IDbContextFactory<BooksContext> dbContextFactory, string patch, Guid id)
         {
             if (String.IsNullOrEmpty(patch))
             {
@@ -100,7 +94,7 @@ namespace GraphQLAPIDemo.Mutation
                                 case "remove":
                                     patchDocument.Remove(patchObject.path);
                                     break;
-                                //not supporting Add, Copy or Test
+                                //not supporting Copy or Test
                                 default:
                                     break;
                             }
