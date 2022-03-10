@@ -75,7 +75,7 @@ namespace GraphQLAPIDemo.Listener
             }
             //adding a line break
             sb.AppendLine(Environment.NewLine);           
-           var fullFilePath = System.IO.Path.GetDirectoryName(Directory.GetCurrentDirectory()) +  "//" + String.Format("Log_Activity_{0}.txt", DateTimeOffset.UtcNow.UtcDateTime.ToString("yyyyMMdd"));
+           var fullFilePath = System.IO.Path.GetDirectoryName(Directory.GetCurrentDirectory()) +  "//" + String.Format("Log_Trace_{0}.txt", DateTimeOffset.UtcNow.UtcDateTime.ToString("yyyyMMdd"));
             if (File.Exists(fullFilePath))
             {
                 //append to the file

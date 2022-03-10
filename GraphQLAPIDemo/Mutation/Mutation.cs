@@ -2,11 +2,8 @@
 using GraphQLAPIDemo.Data.Models;
 using HotChocolate.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
-using Microsoft.AspNetCore.JsonPatch.Operations;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using System.Text.Json;
 
 namespace GraphQLAPIDemo.Mutation
 {
@@ -36,7 +33,7 @@ namespace GraphQLAPIDemo.Mutation
             await context.SaveChangesAsync();
             return book;
         }
-
+        [Authorize]
         public async Task<Book> EditBook([Service] IDbContextFactory<BooksContext> dbContextFactory, EditBookPayload edit)
         {
             var context = dbContextFactory.CreateDbContext();
@@ -61,7 +58,7 @@ namespace GraphQLAPIDemo.Mutation
 
             return new Book();
         }
-
+        [Authorize]
         public async Task<Book> PatchBook([Service] IDbContextFactory<BooksContext> dbContextFactory, string patch, Guid id)
         {
             if (String.IsNullOrEmpty(patch))

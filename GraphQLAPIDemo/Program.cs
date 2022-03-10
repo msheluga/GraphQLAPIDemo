@@ -1,7 +1,12 @@
+
+using GraphQLAPIDemo.Authorization;
 using GraphQLAPIDemo.Data;
+using GraphQLAPIDemo.Extensions;
 using GraphQLAPIDemo.Listener;
 using GraphQLAPIDemo.Mutation;
 using GraphQLAPIDemo.Query;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using OpenTelemetry.Instrumentation.AspNetCore;
 using OpenTelemetry.Metrics;
@@ -23,26 +28,31 @@ builder.Services.AddScoped<BooksContext>(sp =>
     sp.GetRequiredService<IDbContextFactory<BooksContext>>().CreateDbContext());
 
 builder.Services.AddHealthChecks();
-//builder.Services.AddAuthorization();
+builder.Services.AddAuthorization();
+
 
 builder.Services.AddHttpResultSerializer(
     batchSerialization: HotChocolate.AspNetCore.Serialization.HttpResultSerialization.JsonArray
     );
 
-builder.Services.AddGraphQLServer()     
+
+builder.Services.AddGraphQLServer()
+    .AddHttpRequestInterceptor<HttpRequestInterceptor>()
     .AddExportDirectiveType()
     .BindRuntimeType<Guid, UuidType>()
-    .BindRuntimeType<Guid?, UuidType>()
-    //.AddAuthorization()
-    //.AddAuthorizationHandler<MinimumPermissionHandler>()
+    .BindRuntimeType<Guid?, UuidType>()    
     .AddQueryType<Query>()
+    //.AddAuthorization()
+    .UseDocumentParser()
+    .UseDocumentValidation()    
+    .UseRequest<MutationAuthorizeHandler>()
     .AddProjections()
     .AddFiltering()
     .AddSorting()    
     .AddInstrumentation()
     .AddDiagnosticEventListener<MyListener>()
     .AddDefaultTransactionScopeHandler()
-    //.AddMutationConventions();    
+    //.AddMutationConventions();  
     .AddMutationType<Mutation>();
 
 builder.Services.AddOpenTelemetryTracing(
@@ -101,12 +111,13 @@ builder.Services.Configure<AspNetCoreInstrumentationOptions>(options =>
 var app = builder.Build();
 app.UseRouting();
 //app.UseAuthentication();
-//app.UseAuthorization();
+app.UseAuthorization();
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapGraphQL();
+    endpoints.MapGraphQLSchema("/graphql/schema");
 });
 
 

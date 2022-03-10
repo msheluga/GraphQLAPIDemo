@@ -28,7 +28,6 @@ namespace GraphQLAPIDemo.Data.Models
         public string Title { get; set; }
         [Required]
         [StringLength(50)]
-        [Authorize(Policy ="Author")]
         public string Author { get; set; }
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
