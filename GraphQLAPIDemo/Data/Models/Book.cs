@@ -4,41 +4,30 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using HotChocolate.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
+    [Index("AuthorId", Name = "IX_Books_AuthorId")]
     public partial class Book
     {
-        public Book()
-        {
-            BooksInGroups = new HashSet<BooksInGroups>();
-        }
-
         [Key]
         public Guid Id { get; set; }
         [Required]
-        [Column("ISBN")]
-        [StringLength(30)]
-        public string Isbn { get; set; }
-        [Required]
         [StringLength(50)]
+        [Unicode(false)]
+        [Authorize(Policy = "Book.Title.Policy")]
         public string Title { get; set; }
         [Required]
+        [Column("ISBN")]
         [StringLength(50)]
-        public string Author { get; set; }
-        [Column(TypeName = "money")]
-        public decimal Price { get; set; }
-        public Guid AddressId { get; set; }
-        public Guid PressId { get; set; }
+        [Unicode(false)]
+        public string Isbn { get; set; }
+        public Guid AuthorId { get; set; }
 
-        [ForeignKey(nameof(AddressId))]
-        [InverseProperty("Book")]
-        public virtual Address Address { get; set; }
-        [ForeignKey(nameof(PressId))]
-        [InverseProperty("Book")]
-        public virtual Press Press { get; set; }
-        [InverseProperty("Book")]
-        public virtual ICollection<BooksInGroups> BooksInGroups { get; set; }
+        [ForeignKey("AuthorId")]
+        [InverseProperty("Books")]
+        public virtual Author Author { get; set; }
     }
 }

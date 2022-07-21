@@ -9,23 +9,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GraphQLAPIDemo.Data.Models
 {
-    public partial class Address
+    public partial class Author
     {
-        public Address()
+        public Author()
         {
-            Book = new HashSet<Book>();
+            Books = new HashSet<Book>();
         }
 
         [Key]
         public Guid Id { get; set; }
-        [Required]
         [StringLength(50)]
-        public string City { get; set; }
-        [Required]
-        [StringLength(50)]        
-        public string Street { get; set; }
+        [Unicode(false)]
+        [Authorize(Policy = "Author.Name.Policy")]
+        public string Name { get; set; }
 
-        [InverseProperty("Address")]
-        public virtual ICollection<Book> Book { get; set; }
+        [InverseProperty("Author")]
+        public virtual ICollection<Book> Books { get; set; }
     }
 }

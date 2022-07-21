@@ -16,17 +16,17 @@ namespace GraphQLAPIDemo.Query
         {
             using var myActivity = MyActivitySource.StartActivity("Books");           
             myActivity?.AddEvent(new("Custom Log Event Books"));
-            return context.Book; 
+            return context.Books; 
         }
 
-        [UseProjection]
-        [UseFiltering]
-        [UseSorting]
-        public IQueryable<Address> GetAddresses([Service] BooksContext context)
-        {
-            using var myActivity = MyActivitySource.StartActivity("Books");
-            myActivity?.AddEvent(new("Custom Log Event Addresses"));
-            return context.Address;
-        }
+        //[UseProjection]
+        //[UseFiltering]
+        //[UseSorting]
+        //public IQueryable<Address> GetAddresses([Service] BooksContext context)
+        //{
+        //    using var myActivity = MyActivitySource.StartActivity("Books");
+        //    myActivity?.AddEvent(new("Custom Log Event Addresses"));
+        //    return context.Address;
+        //}
     }
 }

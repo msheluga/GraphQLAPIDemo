@@ -15,181 +15,25 @@ namespace GraphQLAPIDemo.Data
         {
         }
 
-        public virtual DbSet<Address> Address { get; set; }
-        public virtual DbSet<AspNetRoleClaims> AspNetRoleClaims { get; set; }
-        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUserTokens> AspNetUserTokens { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-        public virtual DbSet<Book> Book { get; set; }
-        public virtual DbSet<BooksInGroups> BooksInGroups { get; set; }
-        public virtual DbSet<DeviceCodes> DeviceCodes { get; set; }
-        public virtual DbSet<Fields> Fields { get; set; }
-        public virtual DbSet<Keys> Keys { get; set; }
-        public virtual DbSet<Permission> Permission { get; set; }
-        public virtual DbSet<PersistedGrants> PersistedGrants { get; set; }
-        public virtual DbSet<Press> Press { get; set; }
-        public virtual DbSet<Tables> Tables { get; set; }
-        public virtual DbSet<UserAccessView> UserAccessView { get; set; }
-        public virtual DbSet<UserFieldAccess> UserFieldAccess { get; set; }
-        public virtual DbSet<UserTableAccess> UserTableAccess { get; set; }
-        public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<UsersInGroup> UsersInGroup { get; set; }
+        public virtual DbSet<Author> Authors { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Address>(entity =>
+            modelBuilder.Entity<Author>(entity =>
             {
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-            });
-
-            modelBuilder.Entity<AspNetRoles>(entity =>
-            {
-                entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
-                    .IsUnique()
-                    .HasFilter("([NormalizedName] IS NOT NULL)");
-            });
-
-            modelBuilder.Entity<AspNetUserLogins>(entity =>
-            {
-                entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });
-            });
-
-            modelBuilder.Entity<AspNetUserTokens>(entity =>
-            {
-                entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name });
-            });
-
-            modelBuilder.Entity<AspNetUsers>(entity =>
-            {
-                entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
-                    .IsUnique()
-                    .HasFilter("([NormalizedUserName] IS NOT NULL)");
-
-                entity.HasMany(d => d.Role)
-                    .WithMany(p => p.User)
-                    .UsingEntity<Dictionary<string, object>>(
-                        "AspNetUserRoles",
-                        l => l.HasOne<AspNetRoles>().WithMany().HasForeignKey("RoleId"),
-                        r => r.HasOne<AspNetUsers>().WithMany().HasForeignKey("UserId"),
-                        j =>
-                        {
-                            j.HasKey("UserId", "RoleId");
-
-                            j.ToTable("AspNetUserRoles");
-
-                            j.HasIndex(new[] { "RoleId" }, "IX_AspNetUserRoles_RoleId");
-                        });
             });
 
             modelBuilder.Entity<Book>(entity =>
             {
                 entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
-                entity.HasOne(d => d.Address)
-                    .WithMany(p => p.Book)
-                    .HasForeignKey(d => d.AddressId)
+                entity.HasOne(d => d.Author)
+                    .WithMany(p => p.Books)
+                    .HasForeignKey(d => d.AuthorId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Book_Address");
-
-                entity.HasOne(d => d.Press)
-                    .WithMany(p => p.Book)
-                    .HasForeignKey(d => d.PressId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Book_Press");
-            });
-
-            modelBuilder.Entity<BooksInGroups>(entity =>
-            {
-                entity.HasKey(e => new { e.BookId, e.GroupId });
-
-                entity.HasOne(d => d.Book)
-                    .WithMany(p => p.BooksInGroups)
-                    .HasForeignKey(d => d.BookId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_BooksInGroups_Book");
-            });
-
-            modelBuilder.Entity<Fields>(entity =>
-            {
-                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-
-                entity.HasOne(d => d.Table)
-                    .WithMany(p => p.Fields)
-                    .HasForeignKey(d => d.TableId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Fields_Tables");
-            });
-
-            modelBuilder.Entity<Permission>(entity =>
-            {
-                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-            });
-
-            modelBuilder.Entity<Press>(entity =>
-            {
-                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-            });
-
-            modelBuilder.Entity<Tables>(entity =>
-            {
-                entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
-            });
-
-            modelBuilder.Entity<UserAccessView>(entity =>
-            {
-                entity.ToView("UserAccessView");
-            });
-
-            modelBuilder.Entity<UserFieldAccess>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
-                entity.HasOne(d => d.Field)
-                    .WithMany(p => p.UserFieldAccess)
-                    .HasForeignKey(d => d.FieldId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UserFieldAccess_Fields");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.UserFieldAccess)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UserFieldAccess_Users");
-            });
-
-            modelBuilder.Entity<UserTableAccess>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
-                entity.HasOne(d => d.Table)
-                    .WithMany(p => p.UserTableAccess)
-                    .HasForeignKey(d => d.TableId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UserTableAccess_Tables");
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.UserTableAccess)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UserTableAccess_Users");
-            });
-
-            modelBuilder.Entity<Users>(entity =>
-            {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-            });
-
-            modelBuilder.Entity<UsersInGroup>(entity =>
-            {
-                entity.HasKey(e => new { e.UserId, e.GroupId });
-
-                entity.HasOne(d => d.User)
-                    .WithMany(p => p.UsersInGroup)
-                    .HasForeignKey(d => d.UserId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UsersInGroup_Users");
+                    .HasConstraintName("FK__Books__AuthorId__5165187F");
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -1,0 +1,1380 @@
+Activity.Id:          00-82636af7792b1b61bd135f6cee502eae-7b57a483cd2e1a2f-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /weatherforecast
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:51:48.8817508Z
+Activity.Duration:    00:00:00.2715175
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /weatherforecast
+    http.url: https://localhost:7019/weatherforecast
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 404
+    otel.status_code: ERROR
+    responseLength: 0
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:51:49 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:51:49 PM +00:00]
+    Http response length 0 [7/19/2022 2:51:49 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:51:49 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+
+Activity.Id:          00-7762075deacbf8a79abdcd68a80a7cab-691fee67d9b6abcd-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.1863949Z
+Activity.Duration:    00:00:00.0482754
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql
+    http.url: https://localhost:7019/graphql
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 301
+    otel.status_code: UNSET
+    responseLength: 0
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length 0 [7/19/2022 2:52:00 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:00 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-d74026c86e5a99560d86e47b48ba833a-6c66a3a9ff867c2f-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.2380905Z
+Activity.Duration:    00:00:00.2403133
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/
+    http.url: https://localhost:7019/graphql/
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length  [7/19/2022 2:52:00 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:00 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-3a57533771d95d5aa0032dcfdcabe4c2-8212044eaaa18233-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/css/11.749c2282.chunk.css
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.5061137Z
+Activity.Duration:    00:00:00.0064797
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/css/11.749c2282.chunk.css
+    http.url: https://localhost:7019/graphql/static/css/11.749c2282.chunk.css
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 2941
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length 2941 [7/19/2022 2:52:00 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:00 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-bbd74538c6f7a3e2d03947e801ebf6a3-5f6b1854730d10bd-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/main.dbc5e472.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.5052951Z
+Activity.Duration:    00:00:00.0106258
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/main.dbc5e472.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/main.dbc5e472.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 36666
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length 36666 [7/19/2022 2:52:00 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:00 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-e66709a41064dd1b27fe319cdb5e4824-4512d9170a20ff82-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /_framework/aspnetcore-browser-refresh.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.5122380Z
+Activity.Duration:    00:00:00.0434868
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /_framework/aspnetcore-browser-refresh.js
+    http.url: https://localhost:7019/_framework/aspnetcore-browser-refresh.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 11948
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length 11948 [7/19/2022 2:52:00 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:00 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-3268bd8a1b0a1bef8383589eb449edfa-7b509389e8f30f7b-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/11.6e853228.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.5112510Z
+Activity.Duration:    00:00:00.0568877
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/11.6e853228.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/11.6e853228.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 211234
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length 211234 [7/19/2022 2:52:00 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:00 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-3b50460320beedd3de2273a948872210-6430e9b2a07cd87e-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/20.92efa69f.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.6262840Z
+Activity.Duration:    00:00:00.0007335
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/20.92efa69f.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/20.92efa69f.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 13845
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length 13845 [7/19/2022 2:52:00 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:00 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-0aff98a8d4c5dd5f6a440b5ace34d9d1-6fad844825fcb1e7-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/2.36365a8e.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.6261226Z
+Activity.Duration:    00:00:00.0798430
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/2.36365a8e.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/2.36365a8e.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 135663
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length 135663 [7/19/2022 2:52:00 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:00 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-69b22bad3204e1a1c8c4549819e088db-dd81c4967df61da5-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/css/0.11c6169f.chunk.css
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.6258090Z
+Activity.Duration:    00:00:00.0803694
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/css/0.11c6169f.chunk.css
+    http.url: https://localhost:7019/graphql/static/css/0.11c6169f.chunk.css
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 83063
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length 83063 [7/19/2022 2:52:00 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:00 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-60ba361deb74d5b6beacd2e4663bbc1c-37661e0153d82342-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/0.95dc6098.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:00.6258956Z
+Activity.Duration:    00:00:00.3969323
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/0.95dc6098.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/0.95dc6098.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 3923419
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:00 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:00 PM +00:00]
+    Http response length 3923419 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-f26932c8553937863612c8a9df3fb85d-41d0144d00084b94-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/favicon.svg
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.4506931Z
+Activity.Duration:    00:00:00.0007556
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/favicon.svg
+    http.url: https://localhost:7019/graphql/favicon.svg
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 855
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 855 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-5cac328b2d8eeb50ef5fe1434069efba-d981a30b470cd6db-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/manifest.webmanifest
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.4611683Z
+Activity.Duration:    00:00:00.0003941
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/manifest.webmanifest
+    http.url: https://localhost:7019/graphql/manifest.webmanifest
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 304
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 304 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-a5bc54dd0c17acd243c878f8f07ce55f-2d0b432f7bb9d382-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/favicon.ico
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.4983520Z
+Activity.Duration:    00:00:00.0283844
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/favicon.ico
+    http.url: https://localhost:7019/graphql/favicon.ico
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 180099
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 180099 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-2d87e5b442e84eae5086e942414d9916-39bc498e698c0139-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/4.fe94dd85.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.5571031Z
+Activity.Duration:    00:00:00.0008398
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/4.fe94dd85.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/4.fe94dd85.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 12614
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 12614 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-9b67953422a5e517c2d1f90fcdb7f123-6c7159cab4d70ef9-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/12.d2ca19cf.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.5571709Z
+Activity.Duration:    00:00:00.0493181
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/12.d2ca19cf.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/12.d2ca19cf.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 229465
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 229465 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-ac8dfe4ea3b9e4a3374ffd797d4ba04c-7ffe1d10583d5278-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/1.24c09420.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.5557351Z
+Activity.Duration:    00:00:00.0589692
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/1.24c09420.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/1.24c09420.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 296824
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 296824 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-73b73a1f7943182c4e368d2b514e106d-29af54afec2f904b-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/18.6378174f.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.7664258Z
+Activity.Duration:    00:00:00.0004890
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/18.6378174f.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/18.6378174f.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 202
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 202 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-0e60d4e085bddca89ace77f8c7462a58-51ae9e2775f58123-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/19.34f2fa76.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.8022438Z
+Activity.Duration:    00:00:00.0025876
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/19.34f2fa76.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/19.34f2fa76.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 202
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 202 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+
+Activity.Id:          00-769d34820cfa1f538dab5147a38a8f3f-1a28292ace0e23e9-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/css/9.e26ab769.chunk.css
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.8485418Z
+Activity.Duration:    00:00:00.0389072
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/css/9.e26ab769.chunk.css
+    http.url: https://localhost:7019/graphql/static/css/9.e26ab769.chunk.css
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 17211
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 17211 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-c452996a24cfc7871c7e7177f9863143-33c7178c14870f57-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/bcp-config.json
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.7528360Z
+Activity.Duration:    00:00:00.1993624
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/bcp-config.json
+    http.url: https://localhost:7019/graphql/bcp-config.json
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length  [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-cd2f57536991cacc78d01af3abdd1d5c-fc8a82592e024021-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/10.0028d9bd.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.8440490Z
+Activity.Duration:    00:00:00.1432791
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/10.0028d9bd.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/10.0028d9bd.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 573881
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 573881 [7/19/2022 2:52:01 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:01 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-71482527a122e79410afafcef9ab6779-9f4614f29d0f9192-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/9.25390153.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:01.8436868Z
+Activity.Duration:    00:00:00.1612933
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/9.25390153.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/9.25390153.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 666506
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:01 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:01 PM +00:00]
+    Http response length 666506 [7/19/2022 2:52:02 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:02 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-8b1019d74c4cf50bda2fff8d7bce1ac6-a62109ed80ad40a4-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/13.afcd2c77.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:02.2571626Z
+Activity.Duration:    00:00:00.0008782
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/13.afcd2c77.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/13.afcd2c77.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 16057
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:02 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:02 PM +00:00]
+    Http response length 16057 [7/19/2022 2:52:02 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:02 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+
+Activity.Id:          00-6265699995557752d7ce7b784459dfe4-5d7584a8d2d2706d-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/15.06d466df.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:26.0229423Z
+Activity.Duration:    00:00:00.0015278
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/15.06d466df.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/15.06d466df.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 27374
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:26 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:26 PM +00:00]
+    Http response length 27374 [7/19/2022 2:52:26 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:26 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-f7ca5ed5524273b2167779abcca61d1f-a6c8b16286a13f8b-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/document-scheduler.e9a57179.worker.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:26.1506330Z
+Activity.Duration:    00:00:00.0520794
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/document-scheduler.e9a57179.worker.js
+    http.url: https://localhost:7019/graphql/static/js/document-scheduler.e9a57179.worker.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 924530
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:26 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:26 PM +00:00]
+    Http response length 924530 [7/19/2022 2:52:26 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:26 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-8005ecd57c0e3f59-01
+Activity.ParentId:    00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-94e9283f13bd50c5-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Parse HTTP Request
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.5507601Z
+Activity.Duration:    00:00:00.0534007
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-ecafe30323931a77-01
+Activity.ParentId:    00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-45a70c253aa4bba9-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Validate Document
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.6507675Z
+Activity.Duration:    00:00:00.1011341
+Activity.TagObjects:
+    graphql.document.id: RSSbqzMMFDqh2FzJgiBnkg==
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-4798389dd1b9f4a7-01
+Activity.ParentId:    00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-45a70c253aa4bba9-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Compile Operation
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.7631152Z
+Activity.Duration:    00:00:00.0427982
+Activity.TagObjects:
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-4715514008fd3696-01
+Activity.ParentId:    00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-ec50b40bf81834e5-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: /schema
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.8840162Z
+Activity.Duration:    00:00:00.0246925
+Activity.TagObjects:
+    graphql.selection.name: schema
+    graphql.selection.type: __Type
+    graphql.selection.path: /schema
+    graphql.selection.field.name: __type
+    graphql.selection.field.coordinate: Query.__type
+    graphql.selection.field.declaringType: Query
+    graphql.selection.field.isDeprecated: False
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-97ced58903b01f8b-01
+Activity.ParentId:    00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-ec50b40bf81834e5-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: /directive
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.9202729Z
+Activity.Duration:    00:00:00.0004775
+Activity.TagObjects:
+    graphql.selection.name: directive
+    graphql.selection.type: __Type
+    graphql.selection.path: /directive
+    graphql.selection.field.name: __type
+    graphql.selection.field.coordinate: Query.__type
+    graphql.selection.field.declaringType: Query
+    graphql.selection.field.isDeprecated: False
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-ec50b40bf81834e5-01
+Activity.ParentId:    00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-45a70c253aa4bba9-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Execute Operation introspection_phase_1
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.8484618Z
+Activity.Duration:    00:00:00.0961217
+Activity.TagObjects:
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-45a70c253aa4bba9-01
+Activity.ParentId:    00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-94e9283f13bd50c5-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: query introspection_phase_1 { schema directive }
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.6410112Z
+Activity.Duration:    00:00:00.3133045
+Activity.TagObjects:
+    graphql.document.id: RSSbqzMMFDqh2FzJgiBnkg==
+    graphql.document.valid: True
+    graphql.operation.id: RSSbqzMMFDqh2FzJgiBnkg==+introspection_phase_1
+    graphql.operation.kind: Query
+    graphql.operation.name: introspection_phase_1
+    graphql.errors.count: 0
+Activity.Events:
+    AddedDocumentToCache [7/19/2022 2:52:27 PM +00:00]
+    AddedDocumentToCache [7/19/2022 2:52:27 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-7cddc2d073f6049e-01
+Activity.ParentId:    00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-94e9283f13bd50c5-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Format HTTP Response
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.9621075Z
+Activity.Duration:    00:00:00.0166265
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-94e9283f13bd50c5-01
+Activity.ParentId:    00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-25bcd0984749fa84-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: GraphQL HTTP POST
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:26.3864870Z
+Activity.Duration:    00:00:01.5985149
+Activity.TagObjects:
+    graphql.http.kind: HttpPost
+    graphql.schema.name: _Default
+    graphql.schema.isDefault: True
+    graphql.http.request.type: single
+    graphql.http.request.query.id: RSSbqzMMFDqh2FzJgiBnkg==
+    graphql.http.request.query.hash: RSSbqzMMFDqh2FzJgiBnkg==
+    graphql.http.request.operation: introspection_phase_1
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-6c4dd579ee0e7ed0ec9cd4ad11f0d65b-25bcd0984749fa84-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:26.3800056Z
+Activity.Duration:    00:00:01.6133424
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: POST
+    http.target: /graphql
+    http.url: https://localhost:7019/graphql
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:26 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:26 PM +00:00]
+    Http response length  [7/19/2022 2:52:27 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:27 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4dc480802f3022736e25a12b489cd9f3-117297c99c05d80b-01
+Activity.ParentId:    00-4dc480802f3022736e25a12b489cd9f3-300fdcb107b77caf-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Parse HTTP Request
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.9996779Z
+Activity.Duration:    00:00:00.0058218
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4dc480802f3022736e25a12b489cd9f3-0ddb7a95be01d68b-01
+Activity.ParentId:    00-4dc480802f3022736e25a12b489cd9f3-0c2e097e21738f12-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Validate Document
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:28.0093187Z
+Activity.Duration:    00:00:00.0090203
+Activity.TagObjects:
+    graphql.document.id: rdIeTGTmih2BopHOLfHp1A==
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4dc480802f3022736e25a12b489cd9f3-2bfedd6658bccd74-01
+Activity.ParentId:    00-4dc480802f3022736e25a12b489cd9f3-0c2e097e21738f12-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Compile Operation
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:28.0226471Z
+Activity.Duration:    00:00:00.0079101
+Activity.TagObjects:
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4dc480802f3022736e25a12b489cd9f3-6c1d5de9bf2c4e15-01
+Activity.ParentId:    00-4dc480802f3022736e25a12b489cd9f3-ccace5fe30e5e236-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: /__schema
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:28.0381937Z
+Activity.Duration:    00:00:00.0208052
+Activity.TagObjects:
+    graphql.selection.name: __schema
+    graphql.selection.type: __Schema!
+    graphql.selection.path: /__schema
+    graphql.selection.field.name: __schema
+    graphql.selection.field.coordinate: Query.__schema
+    graphql.selection.field.declaringType: Query
+    graphql.selection.field.isDeprecated: False
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4dc480802f3022736e25a12b489cd9f3-ccace5fe30e5e236-01
+Activity.ParentId:    00-4dc480802f3022736e25a12b489cd9f3-0c2e097e21738f12-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Execute Operation introspection_phase_2
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:28.0376163Z
+Activity.Duration:    00:00:00.0319833
+Activity.TagObjects:
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4dc480802f3022736e25a12b489cd9f3-0c2e097e21738f12-01
+Activity.ParentId:    00-4dc480802f3022736e25a12b489cd9f3-300fdcb107b77caf-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: query introspection_phase_2 { __schema }
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:28.0092452Z
+Activity.Duration:    00:00:00.0648742
+Activity.TagObjects:
+    graphql.document.id: rdIeTGTmih2BopHOLfHp1A==
+    graphql.document.valid: True
+    graphql.operation.id: rdIeTGTmih2BopHOLfHp1A==+introspection_phase_2
+    graphql.operation.kind: Query
+    graphql.operation.name: introspection_phase_2
+    graphql.errors.count: 0
+Activity.Events:
+    AddedDocumentToCache [7/19/2022 2:52:28 PM +00:00]
+    AddedDocumentToCache [7/19/2022 2:52:28 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4dc480802f3022736e25a12b489cd9f3-a3b0ff112fb22930-01
+Activity.ParentId:    00-4dc480802f3022736e25a12b489cd9f3-300fdcb107b77caf-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Format HTTP Response
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:28.0826118Z
+Activity.Duration:    00:00:00.0029066
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4dc480802f3022736e25a12b489cd9f3-300fdcb107b77caf-01
+Activity.ParentId:    00-4dc480802f3022736e25a12b489cd9f3-e92d91166556c272-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: GraphQL HTTP POST
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:52:27.9996015Z
+Activity.Duration:    00:00:00.0907624
+Activity.TagObjects:
+    graphql.http.kind: HttpPost
+    graphql.schema.name: _Default
+    graphql.schema.isDefault: True
+    graphql.http.request.type: single
+    graphql.http.request.query.id: rdIeTGTmih2BopHOLfHp1A==
+    graphql.http.request.query.hash: rdIeTGTmih2BopHOLfHp1A==
+    graphql.http.request.operation: introspection_phase_2
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4dc480802f3022736e25a12b489cd9f3-e92d91166556c272-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:27.9989236Z
+Activity.Duration:    00:00:00.0999950
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: POST
+    http.target: /graphql
+    http.url: https://localhost:7019/graphql
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:27 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:27 PM +00:00]
+    Http response length  [7/19/2022 2:52:28 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:28 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+
+Activity.Id:          00-006b2a889b3bb019b212585227e51d0d-a19255dbe43886fd-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/17.3e6fb23e.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:38.3025887Z
+Activity.Duration:    00:00:00.0009338
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/17.3e6fb23e.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/17.3e6fb23e.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 6745
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:38 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:38 PM +00:00]
+    Http response length 6745 [7/19/2022 2:52:38 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:38 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-038e61348cfe83e11a38cec4cf5dea0c-9503a941f124817b-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/editor.a85ce25e.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:38.5933779Z
+Activity.Duration:    00:00:00.0119775
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/editor.a85ce25e.js
+    http.url: https://localhost:7019/graphql/static/js/editor.a85ce25e.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 194551
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:38 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:38 PM +00:00]
+    Http response length 194551 [7/19/2022 2:52:38 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:38 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-367b14929eb2f1da5ce5ec02da859a7e-2738028a90953beb-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/media/FiraCode-Medium.eb8dedc4.woff2
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:38.6025136Z
+Activity.Duration:    00:00:00.0179138
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/media/FiraCode-Medium.eb8dedc4.woff2
+    http.url: https://localhost:7019/graphql/static/media/FiraCode-Medium.eb8dedc4.woff2
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 102580
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:38 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:38 PM +00:00]
+    Http response length 102580 [7/19/2022 2:52:38 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:38 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-ad75d4282df6cc5977de69c73ef4098b-9007da2a722a3dfb-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/graphql.d820ea0e.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:38.6347849Z
+Activity.Duration:    00:00:00.0707138
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/graphql.d820ea0e.js
+    http.url: https://localhost:7019/graphql/static/js/graphql.d820ea0e.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 1090601
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:38 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:38 PM +00:00]
+    Http response length 1090601 [7/19/2022 2:52:38 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:38 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-99cf664c3ff0a8f2f97d256fb0cff3f2-45e6b280c6ca4e7c-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/51.bd3919a6.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:38.8769588Z
+Activity.Duration:    00:00:00.0021698
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/51.bd3919a6.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/51.bd3919a6.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 3917
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:38 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:38 PM +00:00]
+    Http response length 3917 [7/19/2022 2:52:38 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:38 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-da3b049393c7ad528fff521e4d46f47e-d4601d5fd61f1e70-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/media/codicon.56dba998.ttf
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:39.0328387Z
+Activity.Duration:    00:00:00.0414178
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/media/codicon.56dba998.ttf
+    http.url: https://localhost:7019/graphql/static/media/codicon.56dba998.ttf
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 68352
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:39 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:39 PM +00:00]
+    Http response length 68352 [7/19/2022 2:52:39 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:39 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-0d0ee6d4fce0e2c8af1d5da418c7d437-d38a78ae32bad69d-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/95.591196c3.chunk.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:41.0736052Z
+Activity.Duration:    00:00:00.0016191
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/95.591196c3.chunk.js
+    http.url: https://localhost:7019/graphql/static/js/95.591196c3.chunk.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 39260
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:41 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:41 PM +00:00]
+    Http response length 39260 [7/19/2022 2:52:41 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:41 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-4ec93473b21e91bcf86e23e84e6c5d31-3cb101cf710ea46d-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/js/json.884704ce.js
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:41.2497803Z
+Activity.Duration:    00:00:00.0262372
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/js/json.884704ce.js
+    http.url: https://localhost:7019/graphql/static/js/json.884704ce.js
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 324597
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:41 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:41 PM +00:00]
+    Http response length 324597 [7/19/2022 2:52:41 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:41 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+
+Activity.Id:          00-653ab6bf872058e8b7e8262e27c3f82a-557accd670c307ce-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql/static/media/FiraCode-Bold.4be56996.woff2
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:52:44.6240564Z
+Activity.Duration:    00:00:00.0065858
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: GET
+    http.target: /graphql/static/media/FiraCode-Bold.4be56996.woff2
+    http.url: https://localhost:7019/graphql/static/media/FiraCode-Bold.4be56996.woff2
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 200
+    otel.status_code: UNSET
+    responseLength: 107384
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:52:44 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:52:44 PM +00:00]
+    Http response length 107384 [7/19/2022 2:52:44 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:52:44 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-fb17a9c3468ed403-01
+Activity.ParentId:    00-f136d7671e9c1e54a62f29b79211355a-ffa6649b158e620d-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Parse HTTP Request
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:53:10.6533635Z
+Activity.Duration:    00:00:00.0003144
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-d9f53bfd2811fb43-01
+Activity.ParentId:    00-f136d7671e9c1e54a62f29b79211355a-7721b49b59d23801-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Validate Document
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:53:10.6576829Z
+Activity.Duration:    00:00:00.0001231
+Activity.TagObjects:
+    graphql.document.id: iwLgHNlcuEIuKGhkbs5mfg==
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-3d2aa8c585f58e15-01
+Activity.ParentId:    00-f136d7671e9c1e54a62f29b79211355a-7721b49b59d23801-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Compile Operation
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:53:10.6654006Z
+Activity.Duration:    00:00:00.0065028
+Activity.TagObjects:
+    otel.status_code: OK
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-9fe24d115b120e5d-01
+Activity.ParentId:    00-f136d7671e9c1e54a62f29b79211355a-b59708e48e8ffcc2-01
+Activity.ActivitySourceName: GraphQLAPIDemo
+Activity.DisplayName: Books
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:53:12.9231187Z
+Activity.Duration:    00:00:00.0000596
+Activity.Events:
+    Custom Log Event Books [7/19/2022 2:53:12 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-b59708e48e8ffcc2-01
+Activity.ParentId:    00-f136d7671e9c1e54a62f29b79211355a-41c8414cb9af692e-00
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: /books
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:53:10.6781221Z
+Activity.Duration:    00:00:20.2755332
+Activity.TagObjects:
+    graphql.selection.name: books
+    graphql.selection.type: [Book!]!
+    graphql.selection.path: /books
+    graphql.selection.field.name: books
+    graphql.selection.field.coordinate: Query.books
+    graphql.selection.field.declaringType: Query
+    graphql.selection.field.isDeprecated: False
+    otel.status_code: ERROR
+Activity.Events:
+    Error [7/19/2022 2:53:30 PM +00:00]
+        graphql.error.message: Unexpected Execution Error
+        graphql.error.location.column: 3
+        graphql.error.location.line: 2
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-41c8414cb9af692e-01
+Activity.ParentId:    00-f136d7671e9c1e54a62f29b79211355a-7721b49b59d23801-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Execute Operation
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:53:10.6780695Z
+Activity.Duration:    00:00:20.2887960
+Activity.TagObjects:
+    otel.status_code: ERROR
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-7721b49b59d23801-01
+Activity.ParentId:    00-f136d7671e9c1e54a62f29b79211355a-ffa6649b158e620d-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: query { books }
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:53:10.6576654Z
+Activity.Duration:    00:00:20.3180121
+Activity.TagObjects:
+    graphql.document.id: iwLgHNlcuEIuKGhkbs5mfg==
+    graphql.document.valid: True
+    graphql.operation.id: iwLgHNlcuEIuKGhkbs5mfg==
+    graphql.operation.kind: Query
+    graphql.errors.count: 1
+    otel.status_code: ERROR
+Activity.Events:
+    AddedDocumentToCache [7/19/2022 2:53:30 PM +00:00]
+    AddedDocumentToCache [7/19/2022 2:53:30 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-567b8aa1a80d55c6-01
+Activity.ParentId:    00-f136d7671e9c1e54a62f29b79211355a-ffa6649b158e620d-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: Format HTTP Response
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:53:30.9864106Z
+Activity.Duration:    00:00:00.0102853
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-ffa6649b158e620d-01
+Activity.ParentId:    00-f136d7671e9c1e54a62f29b79211355a-e26985c7355181e6-01
+Activity.ActivitySourceName: HotChocolate.Diagnostics
+Activity.DisplayName: GraphQL HTTP POST
+Activity.Kind:        Internal
+Activity.StartTime:   2022-07-19T14:53:10.6533213Z
+Activity.Duration:    00:00:20.3480595
+Activity.TagObjects:
+    graphql.http.kind: HttpPost
+    graphql.schema.name: _Default
+    graphql.schema.isDefault: True
+    graphql.http.request.type: single
+    graphql.http.request.query.id: iwLgHNlcuEIuKGhkbs5mfg==
+    graphql.http.request.query.hash: iwLgHNlcuEIuKGhkbs5mfg==
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+Activity.Id:          00-f136d7671e9c1e54a62f29b79211355a-e26985c7355181e6-01
+Activity.ActivitySourceName: OpenTelemetry.Instrumentation.AspNetCore
+Activity.DisplayName: /graphql
+Activity.Kind:        Server
+Activity.StartTime:   2022-07-19T14:53:10.6530638Z
+Activity.Duration:    00:00:20.3671812
+Activity.TagObjects:
+    http.host: localhost:7019
+    http.method: POST
+    http.target: /graphql
+    http.url: https://localhost:7019/graphql
+    http.user_agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36
+    requestProtocol: HTTP/2
+    remote: ::1
+    http.status_code: 500
+    otel.status_code: ERROR
+    response: Microsoft.AspNetCore.Http.DefaultHttpResponse
+Activity.Events:
+    Http remote ::1 [7/19/2022 2:53:10 PM +00:00]
+    Http request Microsoft.AspNetCore.Http.DefaultHttpRequest [7/19/2022 2:53:10 PM +00:00]
+    Http response length  [7/19/2022 2:53:31 PM +00:00]
+    Http response Microsoft.AspNetCore.Http.DefaultHttpResponse [7/19/2022 2:53:31 PM +00:00]
+Resource associated with Activity:
+    service.name: GraphQLAPIDemo
+    service.instance.id: b9dd58ac-97bf-4754-8742-5414759753fa
+
+

@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQLAPIDemo", "GraphQLAPIDemo\GraphQLAPIDemo.csproj", "{58FCFA08-272D-4B5F-A690-DBD76357307A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotChocolate.AspNetCore.Authorization", "..\hotchocolate\src\HotChocolate\AspNetCore\src\AspNetCore.Authorization\HotChocolate.AspNetCore.Authorization.csproj", "{C1F109DD-DE51-4F27-9193-016ED082E9E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGen", "CodeGen\CodeGen.csproj", "{78887981-B225-4189-B9D3-CBF0650502AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{58FCFA08-272D-4B5F-A690-DBD76357307A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58FCFA08-272D-4B5F-A690-DBD76357307A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58FCFA08-272D-4B5F-A690-DBD76357307A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1F109DD-DE51-4F27-9193-016ED082E9E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F109DD-DE51-4F27-9193-016ED082E9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F109DD-DE51-4F27-9193-016ED082E9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F109DD-DE51-4F27-9193-016ED082E9E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78887981-B225-4189-B9D3-CBF0650502AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78887981-B225-4189-B9D3-CBF0650502AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78887981-B225-4189-B9D3-CBF0650502AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78887981-B225-4189-B9D3-CBF0650502AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
