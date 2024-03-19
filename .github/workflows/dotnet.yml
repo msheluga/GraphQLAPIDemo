@@ -24,5 +24,10 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
+    #now to make sure it can make the release version
+    - name: Build release version
+      run: dotnet build --configuration Release
+    - name: dotnet publish
+      run: publish E920.API.Graphql.csproj -c Release -r win-x64 --self-contained -o GraphQLAPI"
     #- name: Test
       #run: dotnet test --no-build --verbosity normal
