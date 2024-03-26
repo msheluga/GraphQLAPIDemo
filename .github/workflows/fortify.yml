@@ -2,6 +2,11 @@ name: FoD SAST Scan and Import
 
 on: [workflow_dispatch]
 
+env:
+  FOD_RELEASE_ID: 1
+  FOD_TENANT: "GitHub"
+
+
 jobs:
   FoD-SAST-Scan-And-Import:
     runs-on: windows-latest
