@@ -2,11 +2,6 @@ name: FoD SAST Scan and Import
 
 on: [workflow_dispatch]
 
-env:
-  FOD_RELEASE_ID: 1
-  FOD_TENANT: "GitHub"
-
-
 jobs:
   FoD-SAST-Scan-And-Import:
     runs-on: windows-latest
@@ -30,12 +25,16 @@ jobs:
       - name: Package source code
         run: scancentral package -bt msbuild -bf GraphQLAPIDemo.sln -o package.zip
       - name: Upload package and start FoD scan
-        run: java -jar "$Env:FOD_UPLOAD_JAR" -z package.zip -aurl https://api.ams.fortify.com/ -purl https://ams.fortify.com/ -uc "$Env:FOD_USER"  -ep 2 -pp 0 -I 1 -apf
+        run: java -jar "$Env:FOD_UPLOAD_JAR" -z package.zip -aurl https://api.ams.fortify.com/ -purl https://ams.fortify.com/ -uc "$Env:FOD_USER" "$FOD_PAT" $FOD_UPLOADER_OPTS -n "$FOD_UPLOADER_NOTES"
         env: 
-          FOD_TENANT: ${{ secrets.FOD_TENANT }}  
+          FOD_URL: "https://ams.fortify.com/"
+          FOD_API_URL: "https://api.ams.fortify.com/"
+          FOD_TENANT: ${{ secrets.FOD_TENANT }}
           FOD_USER: ${{ secrets.FOD_USER }}
           FOD_PAT: ${{ secrets.FOD_PAT }}
           FOD_RELEASE_ID: ${{ secrets.FOD_RELEASE_ID }}
+          FOD_UPLOADER_OPTS: "-ep 2 -pp 0 -I 1 -apf"
+          FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
       - name: Export results to GitHub-optimized SARIF
         uses: fortify/gha-export-vulnerabilities@v1
         with:
