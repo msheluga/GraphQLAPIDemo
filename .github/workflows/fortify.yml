@@ -29,8 +29,13 @@ jobs:
       - name: Setup action-zip
         uses: vimtor/action-zip@v1.2
         with:
-          files: publish/
-          dest: package.zip
+          files: publish/         
+          dest: ${{ github.workspace }}/package.zip
+      - name: debug Zip
+        uses: actions/upload-artifact@v1.1
+        with:
+          name: test-artifact
+          path: ${{ github.workspace }}/package.zip
       #scan the package
       - name: Package source code
         run: scancentral package -bt package.zip
