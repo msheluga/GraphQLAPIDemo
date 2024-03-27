@@ -12,7 +12,11 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}      
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+        with:
+          vs-version: 16.10
       - name: Setup Java
         uses: actions/setup-java@v1     # Required for ScanCentral Client and FoD Uploader
         with:
