@@ -38,7 +38,7 @@ jobs:
           path: ${{ github.workspace }}\package.zip
       #scan the package
       - name: Package source code
-        run: scancentral package -bt package.zip
+        run: scancentral package -bt  ${{ github.workspace }}\package.zip
       #- name: Upload package and start FoD scan
       # run: java -jar "$Env:FOD_UPLOAD_JAR" -z package.zip -aurl https://api.ams.fortify.com/ -purl https://ams.fortify.com/ -uc "$Env:FOD_USER" "$FOD_PAT" $FOD_UPLOADER_OPTS -n "$FOD_UPLOADER_NOTES"
       # env: 
