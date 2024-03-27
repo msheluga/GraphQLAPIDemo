@@ -31,14 +31,16 @@ jobs:
         with:
           files: publish/         
           dest: package.zip
-      - name: debug Zip
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-artifact
-          path: ${{ github.workspace }}\package.zip
+      #- name: debug Zip
+      #  uses: actions/upload-artifact@v3
+      #  with:
+      #    name: test-artifact
+      #    path: ${{ github.workspace }}\package.zip
       #scan the package
-      #- name: Package source code
-      #  run: scancentral package -bt ${{ github.workspace }}\publish -o package.zip 
+      - name: Package Code + Dependencies
+      run: scancentral package $PACKAGE_OPTS -o package.zip
+      env:
+        PACKAGE_OPTS: "-bt msbuild"
       #- name: Upload package and start FoD scan
       # run: java -jar "$Env:FOD_UPLOAD_JAR" -z package.zip -aurl https://api.ams.fortify.com/ -purl https://ams.fortify.com/ -uc "$Env:FOD_USER" "$FOD_PAT" $FOD_UPLOADER_OPTS -n "$FOD_UPLOADER_NOTES"
       # env: 
