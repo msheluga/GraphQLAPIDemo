@@ -8,11 +8,11 @@ jobs:
 
     steps:
       - name: Check Out Source Code
-        uses: actions/checkout@v2
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+        uses: actions/checkout@v2   
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
         with:
-          vs-version: 10.0
+          dotnet-version: ${{ env.DOTNET_VERSION }}      
       - name: Setup Java
         uses: actions/setup-java@v1     # Required for ScanCentral Client and FoD Uploader
         with:
@@ -23,7 +23,14 @@ jobs:
         uses: fortify-actions/setup-fod-uploader@v1
    
       - name: Package source code
-        run: scancentral package -bt msbuild -bf GraphQLAPIDemo.sln -o package.zip
+        run: scancentral package -bt dotnet publish GraphQLAPIDemo.sln -c Debug -r win-x64 --self-contained -o publish
+      #zip the package
+      - name: Setup action-zip
+        uses: vimtor/action-zip@v1.2
+        with:
+          files: publish/*.*
+          dest: package.zip
+
       #- name: Upload package and start FoD scan
       # run: java -jar "$Env:FOD_UPLOAD_JAR" -z package.zip -aurl https://api.ams.fortify.com/ -purl https://ams.fortify.com/ -uc "$Env:FOD_USER" "$FOD_PAT" $FOD_UPLOADER_OPTS -n "$FOD_UPLOADER_NOTES"
       # env: 
