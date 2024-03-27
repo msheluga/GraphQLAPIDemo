@@ -22,15 +22,18 @@ jobs:
       - name: Setup Fortify on Demand Uploader
         uses: fortify-actions/setup-fod-uploader@v1
    
-      - name: Package source code
-        run: scancentral package -bt dotnet publish GraphQLAPIDemo.sln -c Debug -r win-x64 --self-contained -o publish
+      #publish the code
+      - name: build and deploy
+        run: dotnet publish GraphQLAPIDemo.sln -c Debug -r win-x64 --self-contained -o publish
       #zip the package
       - name: Setup action-zip
         uses: vimtor/action-zip@v1.2
         with:
           files: publish/*.*
           dest: package.zip
-
+      #scan the package
+      - name: Package source code
+        run: scancentral package -bt package.zip
       #- name: Upload package and start FoD scan
       # run: java -jar "$Env:FOD_UPLOAD_JAR" -z package.zip -aurl https://api.ams.fortify.com/ -purl https://ams.fortify.com/ -uc "$Env:FOD_USER" "$FOD_PAT" $FOD_UPLOADER_OPTS -n "$FOD_UPLOADER_NOTES"
       # env: 
