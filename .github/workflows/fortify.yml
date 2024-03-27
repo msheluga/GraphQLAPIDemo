@@ -38,9 +38,8 @@ jobs:
       #    path: ${{ github.workspace }}\package.zip
       #scan the package
       - name: Package Code + Dependencies
-        run: scancentral package $PACKAGE_OPTS -o package.zip
-        env:
-          PACKAGE_OPTS: "-bt msbuild -bf GraphQLAPIDemo.sln"
+        run: scancentral package -bt msbuild -bf GraphQLAPIDemo.sln -o package.zip
+       
       #- name: Upload package and start FoD scan
       # run: java -jar "$Env:FOD_UPLOAD_JAR" -z package.zip -aurl https://api.ams.fortify.com/ -purl https://ams.fortify.com/ -uc "$Env:FOD_USER" "$FOD_PAT" $FOD_UPLOADER_OPTS -n "$FOD_UPLOADER_NOTES"
       # env: 
